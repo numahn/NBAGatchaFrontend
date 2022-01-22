@@ -1,7 +1,8 @@
 import React, { Fragment } from "react";
 import {Link} from 'react-router-dom'
 
-export default function Nav() {
+
+function Nav() {
   return (
     <Fragment>
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -29,15 +30,34 @@ export default function Nav() {
                     <a className="navbar-brand" href="#">My Collection</a>
                 </li>
                 </Link>
-                <Link to="login">
+                <Link to ="/login">
                 <li className="nav-item me-4 login">
                     <a className="navbar-brand" href="#">Login</a>
                 </li>
                 </Link>
+             
+
             </ul>
+
+{/* 
+            <BrowserRouter>
+          <Routes>
+            <Route path="/Login" element={<Login/>}/>
+          </Routes>
+        </BrowserRouter>  */}
           </div>
+
+          {/* <Link to ="/Login">Login </Link>
+
+          <BrowserRouter>
+          <Routes>
+            <Route path="/Login" element={<Login/>}/>
+          </Routes>
+        </BrowserRouter> */}
         </div>
       </nav>
     </Fragment>
   );
 }
+
+export default Nav
