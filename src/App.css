@@ -2,3 +2,17 @@ body{
   background: rgb(72, 84, 95);
 }
 
+
+.container {
+  
+
+  justify-content: center;
+  align-items: center;
+    height : 400px;
+    width: 530px;
+   color:rgba(11, 12, 12, 0.651);
+   background: #e3e7eb;
+   padding: 1.5em;
+   border-radius: 1em;
+
+}
