@@ -35,6 +35,12 @@ function Nav() {
                     <a className="navbar-brand">Login</a>
                 </li>
                 </Link>
+                <Link to ="/signup">
+                <li className="nav-item me-4 signup">
+                    <a className="navbar-brand">Sign up</a>
+                </li>
+                </Link>
+              
              
 
             </ul>
