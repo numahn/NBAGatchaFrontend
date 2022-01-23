@@ -1,12 +1,16 @@
 import React, { Fragment, useState } from "react";
+import { useNavigate } from 'react-router-dom'
 import Axios from "axios";
 
 function Login() {
   const [usernameLog, setUsernameLog] = useState("");
   const [passwordLog, setpasswordLog] = useState("");
-
   const [loginStatus, setLoginStatus] = useState("");
 
+  const navigate = useNavigate()
+  const redirectSignup = () =>{
+    navigate("/signup")
+  }
   const login = () => {
     Axios.post("http://localhost:5000/login", {
       username: usernameLog,
@@ -27,7 +31,7 @@ function Login() {
         <div className="text-center mt-2">
           <div className="">
             <h1> Login </h1>
-            <label for="Username" class="form-label">
+            <label for="Username" className="form-label">
               Username:{" "}
             </label>
             <input
@@ -40,7 +44,7 @@ function Login() {
             />
           </div>
 
-          <label for="password" class="form-label mt-2">
+          <label type="password" className="form-label mt-2">
             Password:{" "}
           </label>
           <input
@@ -52,12 +56,18 @@ function Login() {
             }}
           />
 
-          <button onClick={login} class="btn btn-primary mt-3">
+          <button onClick={login} className="btn btn-primary mt-3">
             {" "}
-            Login{" "}
+            Log in{" "}
           </button>
         </div>
         <h1> {loginStatus}</h1>
+
+  
+        <em> Don't have an account already? Click below to Sign up!</em>
+        <div className="d-flex justify-content-center">
+        <button className="button btn btn-primary mt-3" onClick={redirectSignup}>Sign up</button>
+      </div>
       </div>
     </Fragment>
   );
