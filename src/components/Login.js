@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import Axios from "axios";
 
 function Login() {
-  const [usernameLog, setUsernameLog] = useState("");
+  const [emailLog, setEmailLog] = useState("");
   const [passwordLog, setpasswordLog] = useState("");
   const [loginStatus, setLoginStatus] = useState("");
 
@@ -13,14 +13,14 @@ function Login() {
   }
   const login = () => {
     Axios.post("http://localhost:5000/login", {
-      username: usernameLog,
+      email: emailLog,
       password: passwordLog,
     }).then((response) => {
       console.log(response);
       if (response.data.error) {
         setLoginStatus(response.data.error.message);
       } else {
-        setLoginStatus(response.data[0].username);
+        setLoginStatus(response.data.data.email);
       }
     });
   };
@@ -32,14 +32,14 @@ function Login() {
           <div className="">
             <h1> Login </h1>
             <label for="Username" className="form-label">
-              Username:{" "}
+              Email:{" "}
             </label>
             <input
               text="text"
               className=" form-control"
               placeholder=" Username..."
               onChange={(e) => {
-                setUsernameLog(e.target.value);
+                setEmailLog(e.target.value);
               }}
             />
           </div>
