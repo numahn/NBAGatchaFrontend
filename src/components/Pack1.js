@@ -22,9 +22,13 @@ export default function Pack1() {
 
   return (
     <Fragment>
-      <div className="card d-flex flex-wrap justify-content-center mt-2">
+    <h1 className="text-center">Starter Pack (The Benchwarmers)</h1>
+    <div className="image d-flex justify-content-center">
+        <img src="https://s3.envato.com/files/85563070/1.png" alt="chest" width="75%"></img>
+    </div>
+      <div className="d-flex flex-wrap justify-content-around mx-3">
         {players.map((player) => (
-          <div class="card text-white bg-dark">
+          <div class="player-card text-white bg-dark mt-4">
             <img src={player.player_image} class="card-img-top" alt={player.player_id} />
             <div class="card-body">
               <h5 class="card-title">{player.player_name}</h5>

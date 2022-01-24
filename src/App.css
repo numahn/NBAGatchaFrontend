@@ -3,10 +3,12 @@ body{
   font-family: 'Helvetica', 'Arial', sans-serif;
   color: white;
 }
-.card{
+.store-card{
   width: 18rem;
 }
-
+.player-card{
+  width: 10rem;
+}
 .container {
   
 

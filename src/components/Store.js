@@ -24,7 +24,7 @@ export default function Store() {
         <h1 className="text-center">Balance: {vcImg}</h1>
       </div>
       <div className="d-flex justify-content-around mt-5">
-        <div className="card text-white bg-dark mb-3">
+        <div className="store-card text-white bg-dark mb-3">
           <img
             src="https://static.turbosquid.com/Preview/001285/051/IC/_600.jpg"
             width="10%"
@@ -42,7 +42,7 @@ export default function Store() {
           </div>
         </div>
 
-        <div className="card text-white bg-dark mb-3">
+        <div className="store-card text-white bg-dark mb-3">
           <img
             src="https://static.turbosquid.com/Preview/001285/051/IC/_600.jpg"
             width="10%"
@@ -60,7 +60,7 @@ export default function Store() {
           </div>
         </div>
 
-        <div className="card text-white bg-dark mb-3">
+        <div className="store-card text-white bg-dark mb-3">
           <img
             src="https://static.turbosquid.com/Preview/001285/051/IC/_600.jpg"
             width="10%"
