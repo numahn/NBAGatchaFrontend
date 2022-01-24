@@ -40,8 +40,6 @@ function Nav() {
                     <a className="navbar-brand">Sign up</a>
                 </li>
                 </Link>
-              
-             
 
             </ul>
 
