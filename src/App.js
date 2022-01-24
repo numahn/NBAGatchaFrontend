@@ -6,6 +6,7 @@ import Nav from "./components/Nav";
 import Login from "./components/Login";
 import Store from "./components/Store";
 import Signup from "./components/Signup";
+import Pack1 from "./components/Pack1";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/Login" element={<Login/>}/>
         <Route path="/store" element={<Store/>}/>
         <Route path="/signup" element={<Signup/>}/>
+        <Route path="/pack1" element={<Pack1/>}/>
       </Routes>
     </BrowserRouter>
 
