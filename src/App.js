@@ -7,7 +7,7 @@ import Login from "./components/Login";
 import Store from "./components/Store";
 import Signup from "./components/Signup";
 import Pack1 from "./components/Pack1";
-
+import "aos/dist/aos.css"
 function App() {
   return (
 
