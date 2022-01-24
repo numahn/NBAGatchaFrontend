@@ -2,6 +2,7 @@ import React, { Fragment } from "react";
 import { Link } from "react-router-dom";
 
 export default function Store() {
+  //Displaying packs
   return (
     <Fragment>
       <div className="d-flex justify-content-around mt-5">
