@@ -31,6 +31,8 @@ export default function Pack1() {
     let chosenCard = players[selector]
     console.log(chosenCard)
     console.log(chosenCard.player_id)
+    //Need to add currency subtraction later here
+    
   }
 
 
