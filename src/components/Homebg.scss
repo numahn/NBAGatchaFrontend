@@ -1,0 +1,74 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .Parallax {
+    display: flex;
+    justify-content: center;
+  
+    &__background,
+    &__background-triangles {
+      width: 2100px;
+      height: 2580px;
+      background-repeat: no-repeat;
+      background-size: contain;
+      position: absolute;
+    }
+  
+    &__background {
+      background-image: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/9956aeaf-2c66-41ac-85e8-1423f66ad703/ddssjii-59641642-e195-4d8a-b25c-5c81ee6d2699.jpg/v1/fill/w_1920,h_1080,q_75,strp/jordan_kobe_lebron_nba_4k_wallpaper_by_skythlee_ddssjii-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTA4MCIsInBhdGgiOiJcL2ZcLzk5NTZhZWFmLTJjNjYtNDFhYy04NWU4LTE0MjNmNjZhZDcwM1wvZGRzc2ppaS01OTY0MTY0Mi1lMTk1LTRkOGEtYjI1Yy01YzgxZWU2ZDI2OTkuanBnIiwid2lkdGgiOiI8PTE5MjAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.vsCgrR9dSC4u87Npfr4Q08KwMh5-ll_gWs9fxC3fYn4");
+    }
+  
+    &__background-triangles {
+      background-image: url("background-triangles.png");
+    }
+  
+    &__content {
+      width: 1200px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      z-index: 1;
+      margin-top: 100px;
+  
+      &__heading,
+      &__cta {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+      }
+  
+      &__heading {
+        background-color: rgb(175, 15, 15);
+        width: 40%;
+        padding: 40px;
+  
+        &__text {
+          margin: 10px 0;
+          font-size: 60px;
+        }
+  
+        &__caption {
+          margin: 0;
+          font-size: 20px;
+        }
+      }
+  
+      &__cta {
+        background-color: #5a7ad3;
+        width: 60%;
+        padding: 40px;
+  
+        font-size: 20px;
+        color: rgb(235, 18, 18);
+  
+        margin-top: 120px;
+      }
+    }
+  }
+  

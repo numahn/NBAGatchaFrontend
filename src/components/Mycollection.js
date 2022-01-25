@@ -3,6 +3,9 @@ import "./App.scss"
 
 
  function Mycollection() {
+
+let link = "https://cdn.wallpapersafari.com/72/99/oRxvNl.jpeg"
+
   const [offsetY, setOffsetY] = useState(0);
   const handleScroll = () => setOffsetY(window.pageYOffset);
 
