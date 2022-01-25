@@ -15,7 +15,7 @@ export default function Pack2() {
           "https://ttp-capstone-project-backend.herokuapp.com/players_cards"
         );
         console.log(response);
-        setPlayers(response.data.slice(0, 9));
+        setPlayers(response.data.slice(0, 10));
       } catch (err) {
         console.error(err.message);
       }
