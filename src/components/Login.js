@@ -1,5 +1,4 @@
 import React, { Fragment, useState, useEffect } from "react";
-import React, { Fragment, useState } from "react";
 import { useNavigate } from 'react-router-dom'
 import Axios from "axios";
 import { Navigate } from 'react-router-dom'
@@ -20,11 +19,6 @@ function Login() {
   }
 
   const dispatch = useDispatch(); 
-
-  const navigate = useNavigate()
-  const redirectSignup = () =>{
-    navigate("/signup")
-  }
 
 
 

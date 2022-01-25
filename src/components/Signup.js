@@ -1,5 +1,5 @@
 import React, {Fragment, useState} from 'react';
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Link} from 'react-router-dom'
 import Axios from 'axios';
 
 
@@ -108,10 +108,10 @@ onClick={users}
 </div>
 
 
-<em> Already have an account? Click below to Log in!</em>
-<div className="d-flex justify-content-center">
+<em> Already have an account? <Link to="/login">Click here to Log in!</Link></em>
+{/* <div className="d-flex justify-content-center">
             <button className="button btn btn-primary mt-1" onClick={redirectLogin}>Log in</button>
-            </div>
+            </div> */}
 </div>
   </Fragment>
   );

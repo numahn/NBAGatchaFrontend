@@ -31,7 +31,7 @@ Aos.init({duration: 2000});
   
   
   data-aos = "flip-right" className="boxes">
-       <Link to="/pack1">
+       <Link to="/pack2">
     <img
               src="https://asset-preview.nbatopshot.com/packs/rare/pack_2_2021_all_star_game_rare.png"
               width="10%"
@@ -44,7 +44,7 @@ Aos.init({duration: 2000});
   </div>
 
    <div data-aos = "flip-up" className="boxes">
-   <Link to="/pack2">
+   <Link to="/pack3">
    <img
               src="https://assets.nbatopshot.com/packs/legendary/pack_1_2020_nba_finals_legendary.png"
               width="10%"
@@ -57,7 +57,7 @@ Aos.init({duration: 2000});
      </div>
    
    <div  data-aos = "flip-left"className="boxes">
-   <Link to="/pack3">
+   <Link to="/pack1">
    <img
               src="https://asset-preview.nbatopshot.com/packs/common/pack_1_got_game_common.png"
               width="10%"
