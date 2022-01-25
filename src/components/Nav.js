@@ -1,8 +1,17 @@
-import React, { Fragment } from "react";
 import {Link} from 'react-router-dom'
+import React, { useState, useEffect, Fragment } from "react";
+import { useNavigate } from 'react-router-dom'
+import { useDispatch, useSelector } from "react-redux";
+import { getUserThunk } from "../redux/actions/userThunk";
 
 
 function Nav() {
+  //redux
+  const [user, isFetchingUser] = useSelector((state) => [
+    state.user.user, 
+    state.user.isFetchingUser, 
+  ]); 
+
   return (
     <Fragment>
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -30,17 +39,25 @@ function Nav() {
                     <a className="navbar-brand">My Collection</a>
                 </li>
                 </Link>
-                <Link to ="/login">
-                <li className="nav-item me-4 login">
-                    <a className="navbar-brand">Log in</a>
-                </li>
-                </Link>
-                <Link to ="/signup">
-                <li className="nav-item me-4 signup">
-                    <a className="navbar-brand">Sign up</a>
-                </li>
-                </Link>
-
+                
+                {isFetchingUser || user === {} ? (
+          <div><Link to ="/login">
+          <li className="nav-item me-4 login">
+              <a className="navbar-brand">Log in</a>
+          </li>
+          </Link>
+          <Link to ="/signup">
+          <li className="nav-item me-4 signup">
+              <a className="navbar-brand">Sign up</a>
+          </li>
+          </Link></div>
+        ) : (
+          <div>
+            <div>{user.username}</div>
+            <div>{"$ "}{user.currency}</div>
+            <button className='btn btn-danger'>Log Out</button>
+          </div>  
+        )}
             </ul>
 
 
