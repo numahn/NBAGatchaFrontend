@@ -1,4 +1,5 @@
 import React, { Fragment, useState, useEffect } from "react";
+import React, { Fragment, useState } from "react";
 import { useNavigate } from 'react-router-dom'
 import Axios from "axios";
 import { Navigate } from 'react-router-dom'
@@ -9,7 +10,6 @@ import { loginStatusActions} from "../redux/actions/loginStatusActions"
 function Login() {
   const [emailLog, setEmailLog] = useState("");
   const [passwordLog, setpasswordLog] = useState("");
-
   const [loginStatus, setLoginStatus] = useState("");
   const [redirect, setRedirect] = useState(false) //redirect to main page
   
@@ -20,6 +20,14 @@ function Login() {
   }
 
   const dispatch = useDispatch(); 
+
+  const navigate = useNavigate()
+  const redirectSignup = () =>{
+    navigate("/signup")
+  }
+
+
+
 
   const login = () => {
     Axios.post("http://localhost:5000/login", {
@@ -76,10 +84,11 @@ function Login() {
             />
           </div>
 
-          <label for="password" class="form-label mt-2">
+          <label type="password" className="form-label mt-2">
             Password:{" "}
           </label>
           <input
+          type="password"
             className="mb-3"
             className="form-control"
             placeholder="Password..."
@@ -89,7 +98,7 @@ function Login() {
             }}
           />
 
-          <button onClick={login} class="btn btn-primary mt-3">
+          <button onClick={login} className="btn btn-primary mt-3">
             {" "}
             Login{" "}
           </button>
