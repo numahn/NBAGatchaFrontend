@@ -20,7 +20,8 @@ function Home() {
 
 
         <>
-       
+       <div className=" homegrid">
+<div data-aos = "flip-up" className="homeboxes">
         <div className="Parallax__content__cta">
           <p>
             
@@ -35,6 +36,8 @@ function Home() {
             <button className="button btn btn-primary mt-3" onClick={redirectSignup}>Sign up</button>
             </div>
           </p>
+        </div>
+        </div>
         </div>
       </>
     );
