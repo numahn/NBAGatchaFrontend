@@ -1,83 +1,134 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect } from "react";
 import { Link } from "react-router-dom";
+import Aos from "aos";
+import "aos/dist/aos.css"
 
-export default function Store() {
-  //png of currency
-  const vcImg = (
-    <img
-      src="https://i.kinja-img.com/gawker-media/image/upload/t_original/rqzu9vldxphnlthogvrs"
-      alt="$"
-      width="2%"
-    ></img>
-  );
-  const cardImg = (
-    <img
-      src="https://i.kinja-img.com/gawker-media/image/upload/t_original/rqzu9vldxphnlthogvrs"
-      alt="$"
-      width="5%"
-    ></img>
-  );
+
+function Store() {
+
+useEffect(() => {
+Aos.init({duration: 2000});
+}, []);
+
+
   //Displaying card packs
   return (
     <Fragment>
-      <div className="text-center mt-5 balance">
-        <h1 className="text-center">Balance: {vcImg}</h1>
-      </div>
+
+
+<div className=" grid">
+<div data-aos = "flip-up" className="box">
+  
+<h1> Choosing Packs</h1>
+</div>
+
+</div>
+
+
+
+<div className="grids">
+  <div 
+  
+  
+  data-aos = "flip-right" className="boxes">
+       <Link to="/pack1">
+    <img
+              src="https://asset-preview.nbatopshot.com/packs/rare/pack_2_2021_all_star_game_rare.png"
+              width="10%"
+              className="card-img-top"
+              alt="..."
+              />
+                 </Link>
+               <h5 className="card-title">ALL STAR RARE PACK</h5>
+              
+  </div>
+
+   <div data-aos = "flip-up" className="boxes">
+   <Link to="/pack2">
+   <img
+              src="https://assets.nbatopshot.com/packs/legendary/pack_1_2020_nba_finals_legendary.png"
+              width="10%"
+              className="card-img-top"
+              alt="..."
+            />
+           
+              <h5 className="card-title">RETRO LEGENDARY PACK</h5>
+</Link>
+     </div>
+   
+   <div  data-aos = "flip-left"className="boxes">
+   <Link to="/pack3">
+   <img
+              src="https://asset-preview.nbatopshot.com/packs/common/pack_1_got_game_common.png"
+              width="10%"
+              className="card-img-top"
+              alt="..."
+            />
+             <h5 className="card-title">COMMON PACK</h5>
+             </Link>
+     </div>
+</div>
+
+
+
+
+
+
+
+{/* 
+
+
+
+
+
+
+
       <div className="d-flex justify-content-around mt-5">
-        <div className="store-card text-white bg-dark mb-3">
-          <img
-            src="https://static.turbosquid.com/Preview/001285/051/IC/_600.jpg"
-            width="10%"
-            className="card-img-top"
-            alt="..."
-          />
-          <div className="card-body">
-            <h5 className="card-title">Starter Pack</h5>
-            <p class="card-text">{cardImg} 5</p>
-            <Link to="/pack1">
-              <a href="#" class="btn btn-primary">
-                Open now
-              </a>
-            </Link>
+        <div className=" image">
+        <Link to="/pack1">
+          <div className="card text-white bg-dark mb-3">
+            <img
+              src="https://asset-preview.nbatopshot.com/packs/rare/pack_2_2021_all_star_game_rare.png"
+              width="10%"
+              className="card-img-top"
+              alt="..."
+            />
+            <div className="card-body">
+              <h5 className="card-title">ALL STAR RARE PACK</h5>
+            </div>
           </div>
         </div>
 
-        <div className="store-card text-white bg-dark mb-3">
-          <img
-            src="https://static.turbosquid.com/Preview/001285/051/IC/_600.jpg"
-            width="10%"
-            className="card-img-top"
-            alt="..."
-          />
-          <div className="card-body">
-            <h5 className="card-title">All Stars</h5>
-            <p class="card-text">{cardImg} 10</p>
-            <Link to="/pack2">
-              <a href="#" class="btn btn-primary">
-                Open now
-              </a>
-            </Link>
+        <Link to="/pack2">
+          <div className="card text-white bg-dark mb-3">
+            <img
+              src="https://assets.nbatopshot.com/packs/legendary/pack_1_2020_nba_finals_legendary.png"
+              width="10%"
+              className="card-img-top"
+              alt="..."
+            />
+            <div className="card-body">
+              <h5 className="card-title">RETRO LEGENDARY PACK</h5>
+            </div>
           </div>
         </div>
 
-        <div className="store-card text-white bg-dark mb-3">
-          <img
-            src="https://static.turbosquid.com/Preview/001285/051/IC/_600.jpg"
-            width="10%"
-            className="card-img-top"
-            alt="..."
-          />
-          <div className="card-body">
-            <h5 className="card-title">Retro Pack</h5>
-            <p class="card-text">{cardImg} 20</p>
-            <Link to="/pack3">
-              <a href="#" class="btn btn-primary">
-                Open now
-              </a>
-            </Link>
+        <Link to="/pack3">
+          <div className="card text-white bg-dark mb-3">
+            <img
+              src="https://asset-preview.nbatopshot.com/packs/common/pack_1_got_game_common.png"
+              width="10%"
+              className="card-img-top"
+              alt="..."
+            />
+            <div className="card-body">
+              <h5 className="card-title">COMMON PACK</h5>
+            </div>
           </div>
         </div>
       </div>
+      </div> */}
     </Fragment>
   );
 }
+export default Store;

@@ -72,6 +72,7 @@ currency: currencySign
 
 
 <label 
+text = "password"
 text="passwordSign" 
 className="form-label mt-2"> 
 Password:{" "}

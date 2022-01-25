@@ -13,6 +13,8 @@ import Pack1 from "./components/Pack1";
 import Pack2 from "./components/Pack2";
 import Pack3 from "./components/Pack3";
 import Store from "./components/Store";
+import Mycollection from "./components/Mycollection";
+import 'bootstrap/dist/css/bootstrap.min.css';
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
@@ -26,6 +28,8 @@ ReactDOM.render(
           <Route path="/pack1" element={<Pack1 />} />
           <Route path="/pack2" element={<Pack2 />} />
           <Route path="/pack3" element={<Pack3 />} />
+          <Route path="/collection" element={<Mycollection/>} />
+          
         </Routes>
       </Provider>
     </BrowserRouter>
