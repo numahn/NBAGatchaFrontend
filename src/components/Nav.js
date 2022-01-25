@@ -22,7 +22,7 @@ function Nav() {
 
 <ReactBootStrap.Navbar collapseOnSelect expand="xl" bg="dark" variant="dark">
 <img src="https://pngimg.com/uploads/nba/nba_PNG15.png" alt="logo" width="1%" className="img me-3"></img>
-  <ReactBootStrap.Navbar.Brand href="#home"> NBA GATCHA</ReactBootStrap.Navbar.Brand>
+  <ReactBootStrap.Navbar.Brand href="/"> NBA GATCHA</ReactBootStrap.Navbar.Brand>
   <ReactBootStrap.Navbar.Toggle aria-controls="responsive-navbar-nav" />
   <ReactBootStrap.Navbar.Collapse id="responsive-navbar-nav">
     <ReactBootStrap.Nav className="me-auto">
