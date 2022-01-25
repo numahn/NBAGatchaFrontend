@@ -5,6 +5,10 @@ export default function Home() {
     const redirectSignup = () =>{
         navigate("/signup")
     }
+
+
+       
+
     return (
         <Fragment>
             <h1 className="text-center mt-2">About Us</h1>
