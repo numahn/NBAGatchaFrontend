@@ -28,7 +28,7 @@ currency: currencySign
   return (
   <Fragment>
         <div className="container mt-5">
-        <div className="text-center mt-2">
+        <div className="text-center">
     
 <div className="Signup">
     <h1> Signup</h1>
@@ -109,7 +109,7 @@ onClick={users}
 
 <em> Already have an account? Click below to Log in!</em>
 <div className="d-flex justify-content-center">
-            <button className="button btn btn-primary mt-3" onClick={redirectLogin}>Log in</button>
+            <button className="button btn btn-primary mt-1" onClick={redirectLogin}>Log in</button>
             </div>
 </div>
   </Fragment>
