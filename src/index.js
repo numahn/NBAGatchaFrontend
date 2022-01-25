@@ -3,10 +3,26 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Nav from "./components/Nav";
+import Login from "./components/Login";
+import Signup from "./components/Signup";
+import store from "./redux/store";
+import { Provider } from "react-redux";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+     <BrowserRouter>
+     
+     <Provider store={store}>
+     <Nav />
+      <Routes>
+           <Route path="/"element={<App/>}/>
+           <Route path="/Login" element={<Login/>}/>
+           <Route path="/Signup" element={<Signup/>}/>
+      </Routes>
+      </Provider>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );

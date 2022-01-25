@@ -8,6 +8,7 @@ function Signup() {
 const[usernameSign, setUsernameSign] = useState("")
 const[passwordSign, setPasswordSign] = useState("")
 const[emailSign, setemailSign] = useState("")
+const [currencySign, setCurrencySign] = useState()
 const navigate = useNavigate()
 const redirectLogin = () =>{
     navigate("/login")
@@ -17,7 +18,8 @@ const users = () => {
     Axios.post("http://localhost:5000/users" , {
 username: usernameSign,
 password: passwordSign,
-email: emailSign
+email: emailSign, 
+currency: currencySign
 }).then((response) => {
     console.log(response)
 });
@@ -81,6 +83,20 @@ type= "password"
  placeholder="Enter Password..."
 onChange={(e) => {
     setPasswordSign(e.target.value)
+}}
+/>
+<label 
+text="currencySign" 
+className="form-label mt-2"> 
+Currency:{" "}
+</label>
+<input
+type= "text"
+ className="mb-3"
+ className="form-control"
+ placeholder="Enter Amount to start off with..."
+onChange={(e) => {
+    setCurrencySign(e.target.value)
 }}
 />
 <button 
