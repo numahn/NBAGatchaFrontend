@@ -26,6 +26,11 @@ export default function Pack1() {
     getPlayers();
   }, []);
 
+  const getRandom = () => {
+    
+  }
+
+
   return (
     <Fragment>
       <h1 className="text-center">Starter Pack (The Benchwarmers)</h1>

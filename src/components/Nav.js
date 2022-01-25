@@ -34,7 +34,7 @@ function Nav() {
                     <a className="navbar-brand">Store</a>
                 </li>
                 </Link>
-                <Link to="/collection">
+                <Link to="/mycollection">
                 <li className="nav-item me-4 collection">
                     <a className="navbar-brand">My Collection</a>
                 </li>
