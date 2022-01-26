@@ -12,7 +12,7 @@ export default function Pack3() {
       
         try {
             const body = {currency}
-            const response = await fetch(`http://localhost:5000/login/${user.id}`, {
+            const response = await fetch(`https://ttp-capstone-project-backend.herokuapp.com/user/${user.id}`, {
               method: "PUT", 
               headers: {"Content-Type": "application/json"},
               body: JSON.stringify(body)
@@ -75,7 +75,7 @@ export default function Pack3() {
           ></img>
         </div>
         <div className="d-flex justify-content-center">
-          <button type="button" class="btn btn-secondary" onClick={getRandom} onClick={deductCurrency}>
+          <button type="button" class="btn btn-secondary" onClick={() => {getRandom(); deductCurrency()}}>
             Open (15 {vcImg})
           </button>
         </div>

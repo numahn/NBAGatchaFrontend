@@ -17,7 +17,7 @@ const redirectLogin = () =>{
 }
 
 const users = () => {
-    Axios.post("http://localhost:5000/users" , {
+    Axios.post("https://ttp-capstone-project-backend.herokuapp.com/signup" , {
 username: usernameSign,
 password: passwordSign,
 email: emailSign, 
