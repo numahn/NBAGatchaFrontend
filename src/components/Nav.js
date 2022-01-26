@@ -3,7 +3,7 @@ import React, { useState, useEffect, Fragment } from "react";
 import { useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from "react-redux";
 import { getUserThunk } from "../redux/actions/userThunk";
-
+import ReactDOM from 'react-dom';
 
 function Nav() {
   //redux
@@ -11,7 +11,7 @@ function Nav() {
     state.user.user, 
     state.user.isFetchingUser, 
   ]); 
-
+  
   return (
     <Fragment>
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -54,7 +54,7 @@ function Nav() {
         ) : (
           <div>
             <div>{user.username}</div>
-            <div>{"$ "}{user.currency}</div>
+            <div id="currency">{"$ "}{user.currency}</div>
             <button className='btn btn-danger'>Log Out</button>
           </div>  
         )}

@@ -1,5 +1,5 @@
 import React, {Fragment, useState} from 'react';
-import { useNavigate, Link} from 'react-router-dom'
+import { useNavigate, Link, Navigate} from 'react-router-dom'
 import Axios from 'axios';
 
 
@@ -9,13 +9,15 @@ const[usernameSign, setUsernameSign] = useState("")
 const[passwordSign, setPasswordSign] = useState("")
 const[emailSign, setemailSign] = useState("")
 const [currencySign, setCurrencySign] = useState()
+const [redirect, setRedirect] = useState(false) //redirect to main page
+
 const navigate = useNavigate()
 const redirectLogin = () =>{
     navigate("/login")
 }
 
 const users = () => {
-    Axios.post("https://ttp-capstone-project-backend.herokuapp.com/signup" , {
+    Axios.post("http://localhost:5000/users" , {
 username: usernameSign,
 password: passwordSign,
 email: emailSign, 
@@ -24,7 +26,9 @@ currency: currencySign
     console.log(response)
 });
 };
-
+if (redirect) {
+    return (<Navigate to="/login"/>) //redirect to home upon correct login 
+  }
   return (
   <Fragment>
         <div className="container mt-5">
