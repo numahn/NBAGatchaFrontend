@@ -10,7 +10,7 @@ export default function Pack1() {
   ]); 
   const [currency, setCurrency] = useState(user.currency)
 
-    const updateCurrency = async() => {
+    const updateCurrency = async(id) => {
       
         try {
             const body = {currency}
@@ -28,6 +28,7 @@ export default function Pack1() {
     const deductCurrency = () => {
       setCurrency(currency-5);
       console.log(currency); 
+      updateCurrency();
     }
 
     useEffect(() => {
@@ -82,7 +83,7 @@ export default function Pack1() {
         ></img>
       </div>
       <div className="d-flex justify-content-center">
-        <button type="button" class="btn btn-secondary " onClick={() => {getRandom(); deductCurrency()}}>
+        <button type="button" class="btn btn-secondary " onClick={(e) => {console.log(e); getRandom(); deductCurrency()}}>
           Open (5 {vcImg})
         </button>
       </div>
