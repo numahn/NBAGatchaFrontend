@@ -14,17 +14,25 @@ export default function Pack3() {
         const response = await axios(
           "https://ttp-capstone-project-backend.herokuapp.com/players_cards"
         );
-        console.log(response);
         setPlayers(response.data.slice(10, 20));
       } catch (err) {
         console.error(err.message);
       }
     };
-    console.log(players);
     useEffect(() => {
       getPlayers();
     }, []);
   
+    const getRandom = () => {
+      //Get random number from players array, 0-9
+      let selector = Math.floor(Math.random() * 10)
+      let chosenCard = players[selector]
+      console.log(chosenCard)
+      console.log(chosenCard.player_id)
+      //Need to add currency subtraction later here
+      
+    }
+
     return (
       <Fragment>
         <h1 className="text-center">Retro Pack</h1>
@@ -36,7 +44,7 @@ export default function Pack3() {
           ></img>
         </div>
         <div className="d-flex justify-content-center">
-          <button type="button" class="btn btn-secondary ">
+          <button type="button" class="btn btn-secondary" onClick={getRandom}>
             Open (15 {vcImg})
           </button>
         </div>

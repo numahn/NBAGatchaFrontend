@@ -14,13 +14,11 @@ export default function Pack2() {
         const response = await axios(
           "https://ttp-capstone-project-backend.herokuapp.com/players_cards"
         );
-        console.log(response);
         setPlayers(response.data.slice(0, 10));
       } catch (err) {
         console.error(err.message);
       }
     };
-    console.log(players);
     useEffect(() => {
       getPlayers();
     }, []);
