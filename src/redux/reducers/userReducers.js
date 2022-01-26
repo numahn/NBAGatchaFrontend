@@ -3,6 +3,7 @@ import { FETCH_USER, START_FETCHING_USER, END_FETCHING_USER } from "../actions/u
 const initialState = {
     user: {}, 
     isFetchingUser: true, 
+    
 }
 
 export const userReducer = (state = initialState, action) => {
