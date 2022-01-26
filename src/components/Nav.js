@@ -2,16 +2,16 @@ import {Link} from 'react-router-dom'
 import React, { useState, useEffect, Fragment } from "react";
 import { useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from "react-redux";
-import { getUserThunk } from "../redux/actions/userThunk";
-import ReactDOM from 'react-dom';
-
+import  Axios  from 'axios';
 function Nav() {
-  //redux
+ 
   const [user, isFetchingUser] = useSelector((state) => [
     state.user.user, 
     state.user.isFetchingUser, 
   ]); 
-  
+  const [currency, setCurrency] = useState()
+
+    
   return (
     <Fragment>
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">

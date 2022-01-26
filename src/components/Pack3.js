@@ -1,36 +1,38 @@
 import React, {Fragment, useState, useEffect} from 'react'
 import axios from 'axios';
 import { useSelector } from 'react-redux';
+import { useDispatch } from "react-redux";
+import { getUserThunk } from "../redux/actions/userThunk";
 export default function Pack3() {
   const [user, isFetchingUser] = useSelector((state) => [
     state.user.user, 
     state.user.isFetchingUser, 
-  ]); 
+  ]);
   const [currency, setCurrency] = useState(user.currency)
-
+  const dispatch = useDispatch(); 
+  
+ 
     const updateCurrency = async() => {
       
         try {
-            const body = {currency}
+          const newCurrency = user.currency-10; 
+            const body = {currency: newCurrency}
             const response = await fetch(`https://ttp-capstone-project-backend.herokuapp.com/user/${user.id}`, {
               method: "PUT", 
               headers: {"Content-Type": "application/json"},
               body: JSON.stringify(body)
             })
-            console.log(body); 
+            dispatch(getUserThunk(user.id))
+            console.log(newCurrency); 
         } catch (err) {
             console.error(err.message)
         }
     }
-    
-    const deductCurrency = () => {
-      setCurrency(currency-15);
-      console.log(currency); 
-    }
 
-    useEffect(() => {
-      updateCurrency()
-    }) 
+    const handleSubmit = () => {
+      getRandom(); 
+      updateCurrency(); 
+    }
 
     const [players, setPlayers] = useState([]);
     const vcImg = (
@@ -75,7 +77,7 @@ export default function Pack3() {
           ></img>
         </div>
         <div className="d-flex justify-content-center">
-          <button type="button" class="btn btn-secondary" onClick={() => {getRandom(); deductCurrency()}}>
+          <button type="button" class="btn btn-secondary" onClick={handleSubmit}>
             Open (15 {vcImg})
           </button>
         </div>

@@ -1,42 +1,39 @@
 import React, { Fragment, useState, useEffect } from "react";
 import axios from "axios";
 import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { getUserThunk } from "../redux/actions/userThunk";
 //Pack1: Display all cards and choose random one to give user after using currency
 export default function Pack1() {
-
   const [user, isFetchingUser] = useSelector((state) => [
     state.user.user, 
     state.user.isFetchingUser, 
-  ]); 
+  ]);
   const [currency, setCurrency] = useState(user.currency)
-
-    const updateCurrency = async(id) => {
+  const dispatch = useDispatch(); 
+  
+ 
+    const updateCurrency = async() => {
       
         try {
-            const body = {currency}
+          const newCurrency = user.currency-10; 
+            const body = {currency: newCurrency}
             const response = await fetch(`https://ttp-capstone-project-backend.herokuapp.com/user/${user.id}`, {
               method: "PUT", 
               headers: {"Content-Type": "application/json"},
               body: JSON.stringify(body)
             })
-            console.log(body); 
+            dispatch(getUserThunk(user.id))
+            console.log(newCurrency); 
         } catch (err) {
             console.error(err.message)
         }
     }
-    
-    const deductCurrency = () => {
-      setCurrency(currency-5);
-      console.log(currency); 
-      updateCurrency();
+
+    const handleSubmit = () => {
+      getRandom(); 
+      updateCurrency(); 
     }
-
-    useEffect(() => {
-      updateCurrency()
-    }) 
-
-
-
 
   const [players, setPlayers] = useState([]);
   const vcImg = (
@@ -83,7 +80,7 @@ export default function Pack1() {
         ></img>
       </div>
       <div className="d-flex justify-content-center">
-        <button type="button" class="btn btn-secondary " onClick={(e) => {console.log(e); getRandom(); deductCurrency()}}>
+        <button type="button" class="btn btn-secondary " onClick= {handleSubmit}>
           Open (5 {vcImg})
         </button>
       </div>
