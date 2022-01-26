@@ -1,6 +1,38 @@
 import React, {Fragment, useState, useEffect} from 'react'
+import { useSelector } from 'react-redux';
 import axios from 'axios';
 export default function Pack2() {
+  const [user, isFetchingUser] = useSelector((state) => [
+    state.user.user, 
+    state.user.isFetchingUser, 
+  ]); 
+  const [currency, setCurrency] = useState(user.currency)
+
+    const updateCurrency = async() => {
+      
+        try {
+            const body = {currency}
+            const response = await fetch(`http://localhost:5000/login/${user.id}`, {
+              method: "PUT", 
+              headers: {"Content-Type": "application/json"},
+              body: JSON.stringify(body)
+            })
+            console.log(body); 
+        } catch (err) {
+            console.error(err.message)
+        }
+    }
+    
+    const deductCurrency = () => {
+      setCurrency(currency-10);
+      console.log(currency); 
+    }
+
+    useEffect(() => {
+      updateCurrency()
+    }) 
+
+
     const [players, setPlayers] = useState([]);
     const vcImg = (
       <img
@@ -44,7 +76,7 @@ export default function Pack2() {
           ></img>
         </div>
         <div className="d-flex justify-content-center">
-          <button type="button" class="btn btn-secondary" onClick={getRandom}>
+          <button type="button" class="btn btn-secondary" onClick={getRandom} onClick={deductCurrency}>
             Open (10 {vcImg})
           </button>
         </div>

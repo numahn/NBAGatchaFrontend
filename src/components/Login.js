@@ -4,7 +4,6 @@ import Axios from "axios";
 import { Navigate } from 'react-router-dom'
 import { useDispatch, useSelector } from "react-redux";
 import { getUserThunk } from "../redux/actions/userThunk";
-import { loginStatusActions} from "../redux/actions/loginStatusActions"
 
 function Login() {
   const [emailLog, setEmailLog] = useState("");
@@ -24,7 +23,7 @@ function Login() {
 
 
   const login = () => {
-    Axios.post("https://ttp-capstone-project-backend.herokuapp.com/login", {
+    Axios.post("http://localhost:5000/login", {
       email: emailLog,
       password: passwordLog,
       
