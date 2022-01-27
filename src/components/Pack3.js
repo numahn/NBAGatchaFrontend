@@ -114,7 +114,6 @@ export default function Pack3() {
       console.log(chosenCard.player_id)
       //Need to add currency subtraction later here
       
-    let chosenCard = players[selector]
     let user_id = user.id; 
     let player_id = chosenCard.player_id
     console.log(chosenCard)

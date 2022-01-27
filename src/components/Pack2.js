@@ -59,7 +59,7 @@ export default function Pack2() {
     useEffect(() => {
       getPlayers();
     }, []);
-    const getRandom = () => {
+    const getRandom = async () => {
       //Get random number from players array, 0-9
       let selector = Math.floor(Math.random() * 10)
       let chosenCard = players[selector];
@@ -112,9 +112,7 @@ export default function Pack2() {
   
   
   
-    const getRandom = async () => {
-      let selector = Math.floor(Math.random() * 10)
-      let chosenCard = players[selector]
+     
       let user_id = user.id; 
       let player_id = chosenCard.player_id
       console.log(chosenCard)
@@ -189,4 +187,3 @@ export default function Pack2() {
       </Fragment>
     );
           }
-}
