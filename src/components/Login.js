@@ -1,9 +1,10 @@
 import React, { Fragment, useState, useEffect } from "react";
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
 import Axios from "axios";
 import { Navigate } from 'react-router-dom'
 import { useDispatch, useSelector } from "react-redux";
 import { getUserThunk } from "../redux/actions/userThunk";
+
 
 function Login() {
   const [emailLog, setEmailLog] = useState("");
@@ -60,10 +61,10 @@ function Login() {
   return (
     <Fragment>
 
-<div className="bg4 ">
+<div className="bg4">
 <div data-aos = "flip-down" className="homeboxes">
       <div className="container mt-5">
-        <div className="text-center mt-2">
+        <div className="text-center">
           <div className="">
             <h1> Login </h1>
             <label for="Username" className="form-label">
@@ -72,7 +73,7 @@ function Login() {
             <input
               text="text"
               className=" form-control"
-              placeholder=" Username..."
+              placeholder="Email..."
               onChange={(e) => {
                 setEmailLog(e.target.value);
               }}
@@ -107,11 +108,9 @@ function Login() {
           </div>
         )}
 
-  
-        <em> Don't have an account already? Click below to Sign up!</em>
-        <div className="d-flex justify-content-center">
-        <button className="button btn btn-primary mt-3" onClick={redirectSignup}>Sign up</button>
-      </div>
+          
+        <em> Don't have an account already? Click <Link to="/signup"> Here to Sign up!</Link></em>
+      
       </div>
       </div>
       </div>

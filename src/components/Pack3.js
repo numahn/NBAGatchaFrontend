@@ -113,7 +113,7 @@ export default function Pack3() {
       console.log(chosenCard)
       console.log(chosenCard.player_id)
       //Need to add currency subtraction later here
-      
+
     let user_id = user.id; 
     let player_id = chosenCard.player_id
     console.log(chosenCard)
@@ -151,7 +151,7 @@ export default function Pack3() {
 </div>
 <div className="image d-flex justify-content-center">
 
-<button type="button" class="btn btn-secondary" onClick={handleSubmit} > 
+<button type="button" class="btn btn-secondary mb-3" onClick={handleSubmit} > 
 
 Open (15 {vcImg}) 
 
@@ -167,7 +167,7 @@ Open (15 {vcImg})
 
       </div>
 
-        <div className="d-flex flex-wrap justify-content-around mx-3">
+        <div className="d-flex flex-wrap justify-content-around mt-4 mx-3">
           {players.map((player) => (
             <div class="player-card text-white bg-dark mt-4">
               <img

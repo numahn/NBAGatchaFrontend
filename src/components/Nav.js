@@ -16,11 +16,11 @@ function Nav() {
     <Fragment>
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <div className="container-fluid">
-          <img src="https://pngimg.com/uploads/nba/nba_PNG15.png" alt="logo" width="1%" className="img me-2"></img>
+          <img src="https://pngimg.com/uploads/nba/nba_PNG15.png" alt="logo" width="1%" className="img me-3"></img>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <p className="mt-3 navbar-brand">NBA Gatcha</p>
+                <p className="mt-3  navbar-brand">GGC</p>
               </li>
             </ul>
             <ul className="navbar-nav mb-2 mb-lg-0">

@@ -151,7 +151,7 @@ export default function Pack1() {
         <div className="image d-flex justify-content-center">
           <button
             type="button"
-            class="btn btn-secondary"
+            class="btn btn-secondary mb-3"
             onClick={handleSubmit}
           >
             Open (5 {vcImg})
@@ -162,7 +162,7 @@ export default function Pack1() {
           <div></div>
         </div>
 
-        <div className="d-flex flex-wrap justify-content-around mx-3">
+        <div className="d-flex flex-wrap justify-content-around mt-4 mx-3">
           {players.map((player) => (
             <div class="player-card text-white bg-dark mt-4">
               <img

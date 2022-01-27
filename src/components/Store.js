@@ -70,8 +70,9 @@ const renderContent = () => (
               className="card-img-top"
               alt="..."
               />
-                 </Link>
+                 
                <h5 className="card-title">ALL STAR RARE PACK</h5>
+               </Link>
               
   </div>
 

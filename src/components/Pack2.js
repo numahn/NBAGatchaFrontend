@@ -150,7 +150,7 @@ export default function Pack2() {
       </div>
       <div className="image d-flex justify-content-center">
 
-      <button type="button" class="btn btn-secondary" onClick={handleSubmit} > 
+      <button type="button" class="btn btn-secondary mb-3" onClick={handleSubmit} > 
  
  Open (10 {vcImg}) 
 
