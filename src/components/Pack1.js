@@ -2,6 +2,9 @@ import React, { Fragment, useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from 'react-router-dom'
 import "./App.scss"
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { getUserThunk } from "../redux/actions/userThunk";
 
 // import Confetti from "react-confetti";
  //import Fireworks from "react-native-fireworks";
@@ -10,16 +13,38 @@ import "./App.scss"
 
 export default function Pack1() {
 
-
-
-
-
-
+  const [user, isFetchingUser] = useSelector((state) => [
+    state.user.user, 
+    state.user.isFetchingUser, 
+  ]);
+  const [currency, setCurrency] = useState(user.currency)
+  const dispatch = useDispatch(); 
 
   const navigate = useNavigate()
   const redirectCardopen = () =>{
       navigate("/cardopen")
   }
+
+  const updateCurrency = async() => {
+      
+    try {
+      const newCurrency = user.currency-5; 
+        const body = {currency: newCurrency}
+        const response = await fetch(`https://ttp-capstone-project-backend.herokuapp.com/user/${user.id}`, {
+          method: "PUT", 
+          headers: {"Content-Type": "application/json"},
+          body: JSON.stringify(body)
+        })
+        dispatch(getUserThunk(user.id))
+        console.log(newCurrency); 
+    } catch (err) {
+        console.error(err.message)
+    }
+}
+const handleSubmit = () => {
+  getRandom(); 
+  updateCurrency(); 
+}
 
 
 
@@ -158,7 +183,7 @@ export default function Pack1() {
 </div>
 <div className="image d-flex justify-content-center">
 
-<button type="button" class="btn btn-secondary" onClick={getRandom} > 
+<button type="button" class="btn btn-secondary" onClick={handleSubmit} > 
 
 Open (5 {vcImg}) 
 

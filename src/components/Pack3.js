@@ -136,7 +136,7 @@ export default function Pack3() {
 </div>
 <div className="image d-flex justify-content-center">
 
-<button type="button" class="btn btn-secondary" onClick={getRandom} > 
+<button type="button" class="btn btn-secondary" onClick={handleSubmit} > 
 
 Open (15 {vcImg}) 
 
