@@ -111,10 +111,26 @@ export default function Pack2() {
   
   
   
+  
+    const getRandom = async () => {
+      let selector = Math.floor(Math.random() * 10)
+      let chosenCard = players[selector]
+      let user_id = user.id; 
+      let player_id = chosenCard.player_id
       console.log(chosenCard)
       console.log(chosenCard.player_id)
       //Need to add currency subtraction later here
-      
+  
+  
+      try {
+        const response = await fetch("https://ttp-capstone-project-backend.herokuapp.com/users_collection", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({user_id, player_id}),
+        });
+      } catch (error) {
+        console.error(error.message);
+      }
     }
   
 
@@ -172,4 +188,5 @@ export default function Pack2() {
         </div>
       </Fragment>
     );
+          }
 }

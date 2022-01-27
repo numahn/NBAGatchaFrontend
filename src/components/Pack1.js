@@ -73,28 +73,14 @@ const handleSubmit = () => {
     getPlayers();
   }, []);
 
-  const getRandom = () => {
+  const getRandom = async () => {
     //Get random number from players array, 0-9
     let selector = Math.floor(Math.random() * 10)
     let chosenCard = players[selector];
     
 
 
-  //   <div className="confetti">
-  //   <Confetti width="2000" height="2000" />
-  //   <Fireworks
-  //     speed={3}
-  //     density={10}
-  //     colors={["#2e8221", "#a381de", "#e6508e", "#d11b1e", "#5266ff"]}
-  //     iterations={500}
-  //     height={1500}
-  //     width={1000}
-  //     zIndex={2}
-  //     circular={true}
-  //   />
-  // </div>
-
-
+  
 
 
     cards.push(<div key={cards.length}>
@@ -141,10 +127,23 @@ const handleSubmit = () => {
 
 
 
+    let chosenCard = players[selector]
+    let user_id = user.id; 
+    let player_id = chosenCard.player_id
     console.log(chosenCard)
     console.log(chosenCard.player_id)
     //Need to add currency subtraction later here
-    
+
+
+    try {
+      const response = await fetch("https://ttp-capstone-project-backend.herokuapp.com/users_collection", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({user_id, player_id}),
+      });
+    } catch (error) {
+      console.error(error.message);
+    }
   }
 
 
