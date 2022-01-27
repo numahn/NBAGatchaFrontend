@@ -162,9 +162,9 @@ export default function Pack1() {
           <div></div>
         </div>
 
-        <div className="d-flex flex-wrap justify-content-around mt-4 mx-3">
+        <div className="d-flex flex-wrap justify-content-around mt-4 mx-3 pt-5">
           {players.map((player) => (
-            <div class="player-card text-white bg-dark mt-4">
+            <div class="player-card text-white bg-dark mt-4 pt-3">
               <img
                 src={player.player_image}
                 class="card-img-top"

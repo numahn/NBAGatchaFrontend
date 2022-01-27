@@ -45,14 +45,13 @@ const renderContent = () => (
         className="Parallax__background-triangles"
         style={{ transform: `translateY(${offsetY * 0.8}px)` }}
       />
-      <div className="Parallax__content">{renderContent()}</div>
+      {/* <div className="Parallax__content">{renderContent()}</div> */}
    
 
-<div className=" grid">
-<div data-aos = "fade-up" className="box text-white">
-  
-<h1> Choosing Packs</h1>
-</div>
+      <div className="d-flex justify-content-center align-items-center">
+          <div data-aos="fade-up" className="box text-white px-3">
+            <h1> Choosing Packs</h1>
+          </div>
 
 </div>
 
