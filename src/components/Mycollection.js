@@ -17,13 +17,16 @@ let link = "https://cdn.wallpapersafari.com/72/99/oRxvNl.jpeg"
 
   const renderContent = () => (
     <>
-      <div className="Parallax__content__heading">
+         <div className="homegrids">
+      <div data-aos = "fade-down" className="homeboxes">
+ 
         <h1 className="Parallax__content__heading__text">NBA COLLECTION</h1>
         <h2 className="Parallax__content__heading__caption">
        Your Cards:
         </h2>
       </div>
-      <div className="Parallax__content__cta">
+      <div data-aos = "fade-up" className="homeboxes">
+      <div className="text-center mt-2">
         <p>
           <b>LEGENDARY PICKS:</b> GOATED STATUS
         </p>
@@ -34,6 +37,9 @@ let link = "https://cdn.wallpapersafari.com/72/99/oRxvNl.jpeg"
           <b>COMMON PICKS:</b> CASUAL ROLE PLAYERS
         </p>
       </div>
+      </div>
+      </div>
+
     </>
   );
 

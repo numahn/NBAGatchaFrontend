@@ -59,6 +59,9 @@ function Login() {
   }
   return (
     <Fragment>
+
+<div className="bg4 ">
+<div data-aos = "flip-down" className="homeboxes">
       <div className="container mt-5">
         <div className="text-center mt-2">
           <div className="">
@@ -108,6 +111,8 @@ function Login() {
         <em> Don't have an account already? Click below to Sign up!</em>
         <div className="d-flex justify-content-center">
         <button className="button btn btn-primary mt-3" onClick={redirectSignup}>Sign up</button>
+      </div>
+      </div>
       </div>
       </div>
     </Fragment>

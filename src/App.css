@@ -15,9 +15,9 @@ body{
 .container {
   
 
-  justify-content: center;
+  justify-content: center ;
   align-items: center;
-    height : 450px;
+    height : 490px;
     width: 530px;
    color:rgba(11, 12, 12, 0.651);
    background: #e3e7eb;
@@ -31,7 +31,7 @@ margin: 150px;
 margin-top: 150px;
 background-color: rgb(19, 3, 13);
 overflow: hidden;
-height: 700px;
+height: 600px;
 max-height: 65vh;
 box-shadow: 0px 12px 18px -6px rgba(0, 0, 0, 0.3);
 border-radius: 10px 10px 10px 10px;
@@ -46,7 +46,7 @@ border-radius: 10px 10px 10px 10px;
 .box{
   margin: 20px;
   margin-top: 150px;
-  background-color: rgb(11, 32, 221);
+  background-color: rgb(214, 159, 193);
   overflow: hidden;
   height: 100px;
   max-height: 95vh;
@@ -65,8 +65,172 @@ border-radius: 10px 10px 10px 10px;
 
 
 
+
+  .homegrid{
+    margin: 20px;
+    margin-top: 150px;
+    background-color: rgb(214, 159, 193);
+    overflow: hidden;
+    height: 280px;
+    max-height: 95vh;
+    box-shadow: 0px 12px 18px -6px rgba(0, 0, 0, 0.3);
+    border-radius: 10px 10px 10px 10px;
+    
+
+  }
+  .homegrids{
+    margin: 20px;
+    margin-top: 150px;
+    background-color: rgb(214, 159, 193);
+    overflow: hidden;
+    height: 250px;
+    max-height: 95vh;
+    box-shadow: 0px 12px 18px -6px rgba(0, 0, 0, 0.3);
+    border-radius: 10px 10px 10px 10px;
+    
+
+  }
+  
   @keyframes spin {
     from {transform:rotate(0deg);}
     to {transform:rotate(360deg);}
   }
   
+
+
+
+  .maincontainer{
+    position: relative;
+     width: 250px;
+     height: 320px;
+  
+
+  }
+  .thecard{
+position: absolute;
+width: 100%;
+height: 100%;
+transform-style: preserve-3d;
+transition: all 0.5s ease;
+
+
+  }
+
+  .thecard:hover{
+    transform: rotateY(180deg)
+  }
+
+  .thefront{
+position: absolute;
+width: 100%;
+height: 100%;
+backface-visibility: hidden;
+background: #1a1301;
+color: rgb(228, 218, 218);
+text-align: center;
+font-family: 'zilla slab' , sans-serif;
+border-radius: 20px;
+font-size: 18px;
+font-weight: bold;
+
+  }
+
+  .theback{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    background: #060d36;
+    color: rgb(255, 255, 255);
+    text-align: center;
+font-family: 'zilla slab' , sans-serif;
+border-radius: 20px;
+font-size: 18px;
+font-weight: bold;
+    transform:rotateY(180deg);
+    flex-direction: col;
+align-items: space-around
+      }
+    
+      .button {
+        background-color: #435e54;
+        border: none;
+        color: rgb(65, 83, 82);
+        padding: 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        border-radius: 55%
+      }
+
+      .confetti {
+        font-family: sans-serif;
+        text-align: center;
+      }
+      
+
+      .bg1 {
+        background-image: 
+        url(
+      "http://static1.squarespace.com/static/54d15998e4b0553df778d21d/593d83d5725e25933822bf2f/5e9df693f4f258334d2e3a64/1587762030691/PixelPro+Animated+Background+5.png?format=1500w");
+      background-size: contain;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      margin-top: -50px;
+      }
+
+
+      .bg2 {
+        background-image: 
+        url(
+      "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/9956aeaf-2c66-41ac-85e8-1423f66ad703/ddssjii-59641642-e195-4d8a-b25c-5c81ee6d2699.jpg/v1/fill/w_1920,h_1080,q_75,strp/jordan_kobe_lebron_nba_4k_wallpaper_by_skythlee_ddssjii-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTA4MCIsInBhdGgiOiJcL2ZcLzk5NTZhZWFmLTJjNjYtNDFhYy04NWU4LTE0MjNmNjZhZDcwM1wvZGRzc2ppaS01OTY0MTY0Mi1lMTk1LTRkOGEtYjI1Yy01YzgxZWU2ZDI2OTkuanBnIiwid2lkdGgiOiI8PTE5MjAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.vsCgrR9dSC4u87Npfr4Q08KwMh5-ll_gWs9fxC3fYn4");
+      background-size: contain;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      margin-top: -50px;
+      }
+
+
+      .bg3 {
+        background-image: 
+
+        url(
+      "https://images.daznservices.com/di/library/NBA_Global_CMS_image_storage/7/66/larry-obrien-championship-trophy_1ltn7uv1okfkvzsgq6wrcaowk.png?t=-54042150&quality=80");
+      background-size: contain;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      margin-top: -50px;
+      }
+      
+
+      .bg4 {
+        background-image: 
+        url(
+      "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBw8NDw0NDQ0QDQ0NEBANDQ0NEBANDQ0NFRIWFhURFRUYHSggGBolGxUVITEhJSk3Li4uFx8zOD8tNygtLisBCgoKDQ0NDg0NDysZFRkrKystKysrKy0rLS0tLSstKy0tKzcrKy0rLS0tLSsrKysrKystKysrKystKy0rKysrK//AABEIAKgBLAMBIgACEQEDEQH/xAAYAAEBAQEBAAAAAAAAAAAAAAAAAQIHA//EACUQAQAABAYDAQEBAQAAAAAAAAABAjHwA0FTktHhExRRkREhsf/EABUBAQEAAAAAAAAAAAAAAAAAAAAB/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8A4iACgCLASACgAoigsORIcgL2Q4OyHCh3kt0TtQOPhdE4UQ4+HPxOF5QOshOhVOg6EDoTo7ABIgqKgAIACAqAKJFUiCgAoAgACgXUC6LdEupdQWHORdCF/wCl1Be8iHGR3mQ4zA7yW6M95rdVDj4t0Tj6XUDj4v8Af+/E4+nP0DrIuh1mXUC6F0Lql1QOsi6HWZdQLol0LqXUAuhdS6gIt1QBFQFQBRIiRBoABUAU/gCL/AAFS6gLDkSHOZdQa7SHB3mQv/QO1TvMuqi8CcfVuqCcLynH1efoJ+5fFTrMuoL0hdS6gdB1mAhEupEBP4qAqAAioACCiRVIg0IA0IAoAiiAKACiAKQTtYX/AKB2qd5l1BeBnj6t1A4XlLqc/QOiJ1mXUALql1BehOsy6gEQiAioACAqAKIqAJFUiCgAoACoCKACiAL2H4fgBAIAdqnZ+AvAn5RQBF/ABPzIAAA6D8yPwAihEFQQFRUABBVRUASKpEFABRAFEUFEBFEUFQAUQgC9iKBwJwoAAAgCiAL0IAAgKgAACiAAAAkQiCiAKACiAKBABUAUQEUgEAF/rKgKgB/V/qACoAAAdCAKgCgACKgAAAgAIAoigoAAAKIAoigAAogAqAiiAqiAiiAKICnQAAICoqAAAAgAICoAAAKIoKIAoICgAogCkEAURQBFAEUAQBRAFEAAAAABAAABAAAAAAABRFAVAFEUAAAABUAAAAAAAAAAABAFQAEVAAAAAEAHr6+Jpz7Ynr4mnPtioCeviac+2J6+Jpz7YqAeviac+2J6+Jpz7YgB6+Jpz7Ynr4mnPtiAHr4mnPtieviac+2IAeDE059sTwYmnPtiAL4J9OfbE8GJpz7YoAvgxNOfbE8E+nPtigC+DE059sTwT6c+2KAL4MTTn2xPBPpz7YgB4MTTn2xPBiac+2KAL4MTTn2xPBiac+2KAL4J9OfbE8E+nPtigB6+Jpz7Ynr4mnPtiAHr4mnPtieviac+2IAeviac+2J6+Jpz7YgB6+Jpz7Yp6+Jpz7YqAnr4mnPtieviac+2IAeviac+2J6+Jpz7YgD/2Q==");
+        background-size: 2000px;
+        height: 100vh;
+        margin-top: -50px;
+        font-size:20px;
+        background-repeat:no-repeat; 
+      }
+      
+
+      .bg5 {
+        background-image: 
+        url(
+      "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBw8NDw0NDQ0QDQ0NEBANDQ0NEBANDQ0NFRIWFhURFRUYHSggGBolGxUVITEhJSk3Li4uFx8zOD8tNygtLisBCgoKDQ0NDg0NDysZFRkrKystKysrKy0rLS0tLSstKy0tKzcrKy0rLS0tLSsrKysrKystKysrKystKy0rKysrK//AABEIAKgBLAMBIgACEQEDEQH/xAAYAAEBAQEBAAAAAAAAAAAAAAAAAQIHA//EACUQAQAABAYDAQEBAQAAAAAAAAABAjHwA0FTktHhExRRkREhsf/EABUBAQEAAAAAAAAAAAAAAAAAAAAB/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8A4iACgCLASACgAoigsORIcgL2Q4OyHCh3kt0TtQOPhdE4UQ4+HPxOF5QOshOhVOg6EDoTo7ABIgqKgAIACAqAKJFUiCgAoAgACgXUC6LdEupdQWHORdCF/wCl1Be8iHGR3mQ4zA7yW6M95rdVDj4t0Tj6XUDj4v8Af+/E4+nP0DrIuh1mXUC6F0Lql1QOsi6HWZdQLol0LqXUAuhdS6gIt1QBFQFQBRIiRBoABUAU/gCL/AAFS6gLDkSHOZdQa7SHB3mQv/QO1TvMuqi8CcfVuqCcLynH1efoJ+5fFTrMuoL0hdS6gdB1mAhEupEBP4qAqAAioACCiRVIg0IA0IAoAiiAKACiAKQTtYX/AKB2qd5l1BeBnj6t1A4XlLqc/QOiJ1mXUALql1BehOsy6gEQiAioACAqAKIqAJFUiCgAoACoCKACiAL2H4fgBAIAdqnZ+AvAn5RQBF/ABPzIAAA6D8yPwAihEFQQFRUABBVRUASKpEFABRAFEUFEBFEUFQAUQgC9iKBwJwoAAAgCiAL0IAAgKgAACiAAAAkQiCiAKACiAKBABUAUQEUgEAF/rKgKgB/V/qACoAAAdCAKgCgACKgAAAgAIAoigoAAAKIAoigAAogAqAiiAqiAiiAKICnQAAICoqAAAAgAICoAAAKIoKIAoICgAogCkEAURQBFAEUAQBRAFEAAAAABAAABAAAAAAABRFAVAFEUAAAABUAAAAAAAAAAABAFQAEVAAAAAEAHr6+Jpz7Ynr4mnPtioCeviac+2J6+Jpz7YqAeviac+2J6+Jpz7YgB6+Jpz7Ynr4mnPtiAHr4mnPtieviac+2IAeDE059sTwYmnPtiAL4J9OfbE8GJpz7YoAvgxNOfbE8E+nPtigC+DE059sTwT6c+2KAL4MTTn2xPBPpz7YgB4MTTn2xPBiac+2KAL4MTTn2xPBiac+2KAL4J9OfbE8E+nPtigB6+Jpz7Ynr4mnPtiAHr4mnPtieviac+2IAeviac+2J6+Jpz7YgB6+Jpz7Yp6+Jpz7YqAnr4mnPtieviac+2IAeviac+2J6+Jpz7YgD/2Q==");
+        background-size: 2000px;
+        height: 100vh;
+        margin-top: -50px;
+        font-size:20px;
+        background-repeat:no-repeat; 
+      }
+      

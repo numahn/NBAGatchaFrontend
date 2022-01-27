@@ -1,23 +1,55 @@
-import React, { Fragment, useEffect } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Aos from "aos";
 import "aos/dist/aos.css"
+import "./App.scss"
 
 
 function Store() {
+
+
+  const [offsetY, setOffsetY] = useState(0);
+  const handleScroll = () => setOffsetY(window.pageYOffset);
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
 
 useEffect(() => {
 Aos.init({duration: 2000});
 }, []);
 
 
+const renderContent = () => (
+  <>
+   
+     
+   
+  </>
+);
+
+
   //Displaying card packs
   return (
     <Fragment>
 
+<section className="Parallax">
+      <div
+        className="Parallax__background"
+        style={{ transform: `translateY(-${offsetY * 0.5}px)` }}
+      />
+      <div
+        className="Parallax__background-triangles"
+        style={{ transform: `translateY(${offsetY * 0.8}px)` }}
+      />
+      <div className="Parallax__content">{renderContent()}</div>
+   
 
 <div className=" grid">
-<div data-aos = "flip-up" className="box">
+<div data-aos = "fade-up" className="box text-white">
   
 <h1> Choosing Packs</h1>
 </div>
@@ -25,7 +57,7 @@ Aos.init({duration: 2000});
 </div>
 
 
-
+</section>
 <div className="grids">
   <div 
   
@@ -75,59 +107,6 @@ Aos.init({duration: 2000});
 
 
 
-{/* 
-
-
-
-
-
-
-
-      <div className="d-flex justify-content-around mt-5">
-        <div className=" image">
-        <Link to="/pack1">
-          <div className="card text-white bg-dark mb-3">
-            <img
-              src="https://asset-preview.nbatopshot.com/packs/rare/pack_2_2021_all_star_game_rare.png"
-              width="10%"
-              className="card-img-top"
-              alt="..."
-            />
-            <div className="card-body">
-              <h5 className="card-title">ALL STAR RARE PACK</h5>
-            </div>
-          </div>
-        </div>
-
-        <Link to="/pack2">
-          <div className="card text-white bg-dark mb-3">
-            <img
-              src="https://assets.nbatopshot.com/packs/legendary/pack_1_2020_nba_finals_legendary.png"
-              width="10%"
-              className="card-img-top"
-              alt="..."
-            />
-            <div className="card-body">
-              <h5 className="card-title">RETRO LEGENDARY PACK</h5>
-            </div>
-          </div>
-        </div>
-
-        <Link to="/pack3">
-          <div className="card text-white bg-dark mb-3">
-            <img
-              src="https://asset-preview.nbatopshot.com/packs/common/pack_1_got_game_common.png"
-              width="10%"
-              className="card-img-top"
-              alt="..."
-            />
-            <div className="card-body">
-              <h5 className="card-title">COMMON PACK</h5>
-            </div>
-          </div>
-        </div>
-      </div>
-      </div> */}
     </Fragment>
   );
 }
