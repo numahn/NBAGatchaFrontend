@@ -4,7 +4,6 @@
 
 body {
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
 }
 
 .Parallax {
@@ -13,11 +12,12 @@ body {
 
   &__background,
   &__background-triangles {
-    width: 2100px;
+    width: 1440px;
     height: 2580px;
     background-repeat: no-repeat;
     background-size: contain;
     position: absolute;
+
   }
 
   &__background {

@@ -1,7 +1,10 @@
 body{
   background: #5a5858;
-  font-family: 'Helvetica', 'Arial', sans-serif;
   color: white;
+}
+*{
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 700;
 }
 .store-card{
   width: 18rem;
@@ -56,7 +59,12 @@ border-radius: 10px 10px 10px 10px;
     max-width: 20%;
     margin: left;
   }
-  
+  .Parallax{
+    overflow-x: hidden;
+  }
+
+
+
   @keyframes spin {
     from {transform:rotate(0deg);}
     to {transform:rotate(360deg);}

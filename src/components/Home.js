@@ -28,7 +28,7 @@ import "./Homebg.scss"
 
   const renderContent = () => (
     <>
-      <div className=" homegrid">
+      <div className="homegrid">
 <div data-aos = "flip-up" className="homeboxes">
         <div className="Parallax__content__cta">
           <p>
