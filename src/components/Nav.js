@@ -52,7 +52,7 @@ function Nav() {
           </li>
           </Link></div>
         ) : (
-          <div>
+          <div className="text-white">
             <div>{user.username}</div>
             <div id="currency">{"$ "}{user.currency}</div>
             <button className='btn btn-danger'>Log Out</button>

@@ -15,7 +15,7 @@ export default function Pack3() {
     const updateCurrency = async() => {
       
         try {
-          const newCurrency = user.currency-10; 
+          const newCurrency = user.currency-15; 
             const body = {currency: newCurrency}
             const response = await fetch(`https://ttp-capstone-project-backend.herokuapp.com/user/${user.id}`, {
               method: "PUT", 
