@@ -70,9 +70,9 @@ const renderContent = () => (
               className="card-img-top"
               alt="..."
               />
-                 
-               <h5 className="card-title">ALL STAR RARE PACK</h5>
-               </Link>
+                 </Link>
+               <h5 className="card-title text-center text-white">ALL STAR RARE PACK</h5>
+               
               
   </div>
 
@@ -84,9 +84,9 @@ const renderContent = () => (
               className="card-img-top"
               alt="..."
             />
-           
-              <h5 className="card-title">RETRO LEGENDARY PACK</h5>
-</Link>
+           </Link>
+              <h5 className="card-title text-center text-white">RETRO LEGENDARY PACK</h5>
+
      </div>
    
    <div  data-aos = "flip-left"className="boxes">
@@ -97,8 +97,9 @@ const renderContent = () => (
               className="card-img-top"
               alt="..."
             />
-             <h5 className="card-title">COMMON PACK</h5>
              </Link>
+             <h5 className="card-title text-center text-white">COMMON PACK</h5>
+            
      </div>
 </div>
 

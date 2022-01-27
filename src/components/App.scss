@@ -22,10 +22,13 @@ body {
 
   &__background {
     background-image: url("background.png");
+    
   }
 
   &__background-triangles {
     background-image: url("background-triangles.png");
+    background-color: pink;
+    
   }
 
   &__content {
