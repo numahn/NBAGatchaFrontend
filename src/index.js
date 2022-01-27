@@ -15,6 +15,8 @@ import Pack3 from "./components/Pack3";
 import Store from "./components/Store";
 import Mycollection from "./components/Mycollection";
 import 'bootstrap/dist/css/bootstrap.min.css';
+
+
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>

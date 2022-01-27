@@ -31,10 +31,12 @@ if (redirect) {
   }
   return (
   <Fragment>
+      <div className="bg5 ">
+      <div data-aos = "flip-right" className="homeboxes">
         <div className="container mt-5">
-        <div className="text-center">
+        <div className="text-center ">
     
-<div className="Signup">
+<div className="Signup ">
     <h1> Signup</h1>
     <label 
     type="Username" 
@@ -116,6 +118,8 @@ onClick={users}
 {/* <div className="d-flex justify-content-center">
             <button className="button btn btn-primary mt-1" onClick={redirectLogin}>Log in</button>
             </div> */}
+</div>
+</div>
 </div>
   </Fragment>
   );

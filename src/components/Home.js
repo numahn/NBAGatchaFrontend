@@ -1,7 +1,8 @@
 import React, { useState, useEffect, Fragment } from "react";
 import { useNavigate } from 'react-router-dom'
 import { useSelector } from "react-redux";
-import "./Homebg.scss"
+import "./App.scss"
+
  function Home() {
     const navigate = useNavigate()
     const redirectSignup = () =>{
@@ -28,9 +29,9 @@ import "./Homebg.scss"
 
   const renderContent = () => (
     <>
-      <div className=" homegrid">
+      <div className="homegrid">
 <div data-aos = "flip-up" className="homeboxes">
-        <div className="Parallax__content__cta">
+
           <p>
             
 
@@ -46,7 +47,7 @@ import "./Homebg.scss"
           </p>
         </div>
         </div>
-        </div>
+ 
       </>
   );
 
