@@ -62,8 +62,8 @@ function Login() {
     <Fragment>
 
 <div className="bg4">
-<div data-aos = "flip-down" className="homeboxes">
-      <div className="container mt-5">
+<div data-aos = "flip-down" className="homeboxes pt-5">
+      <div className="container">
         <div className="text-center">
           <div className="">
             <h1> Login </h1>

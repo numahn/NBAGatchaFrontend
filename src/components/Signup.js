@@ -31,8 +31,8 @@ if (redirect) {
   }
   return (
   <Fragment>
-      <div className="bg5 ">
-      <div data-aos = "flip-right" className="homeboxes">
+      <div className="bg5">
+      <div data-aos = "flip-right" className="homeboxes pt-5">
         <div className="container mt-5">
         <div className="text-center ">
     
