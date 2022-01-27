@@ -27,9 +27,38 @@ const getPlayers = async () => {
       ).then((response) => {
 
         console.log(response.data)
-        
+        /*<div class="card player-card text-white bg-dark mb-3">
+        <img class="card-img-top" src={response.data.player_image} alt="Card image cap"/>
+        <div class="card-body">
+          <h5 class="card-title">{response.data.player_name}</h5>
+          <p class="card-text">text.</p>
+        </div>
+      </div>*/
         //<h1>{response.data.player_name}</h1>
-        ReactDOM.render(<h1>{response.data.player_name}</h1>, document.getElementById(`cards${i}`))
+        ReactDOM.render(
+          <div class="collection-card text-white bg-dark me-4 mb-3 mt-4">
+            <img
+              src={response.data.player_image}
+              class="card-img-top"
+              alt={response.data.player_id}
+            />
+
+            <div class="card-body">
+              <h5 class="card-title">{response.data.player_name}</h5>
+              <p className="card-text">
+                Overall: {response.data.player_overall_rating}
+              </p>
+              <p className="card-text">
+                Team: {response.data.player_team}
+              </p>
+              <p className="card-text">
+                Number: {response.data.player_number}
+              </p>
+              <p className="card-text">
+                Height: {response.data.player_height}, Weight: {response.data.player_weight}
+              </p>
+            </div>
+          </div>, document.getElementById(`cards${i}`))
         i++;
       })
       
@@ -81,8 +110,8 @@ let link = "https://cdn.wallpapersafari.com/72/99/oRxvNl.jpeg"
         </h2>
       </div>
       <div data-aos = "fade-up" className="homeboxes">
-      <div className="text-center mt-2">
-        <p>
+      <div className="text-center">
+        <div className="d-flex flex-wrap justify-content-around">
         <div id="cards0"></div>
         <div id="cards1"></div>
         <div id="cards2"></div>
@@ -114,7 +143,7 @@ let link = "https://cdn.wallpapersafari.com/72/99/oRxvNl.jpeg"
         <div id="cards28"></div>
         <div id="cards29"></div>
         <div id="cards30"></div>
-        </p>
+        </div>
       </div>
       </div>
       </div>
