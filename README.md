@@ -28,7 +28,7 @@ Although we have many ideas for this project, this is what we had for the allott
 We first created the database ourselves for the cards we wanted. Since we did not have a lot of time, we decided to make 30 entries, 10 for each pack. Once the database was running, we created packs and added animations to the card opening to add a gambling feel to it. This would then save the cards you earned.
 
 In order to open packs and for them to save, you must first create an account. Before that, the navbar at the top of the site will ask you to either signup or login.
-[a relative link](/images/NavbarBefore.png)
+![Navbar Before](https://raw.githubusercontent.com/nali556/NBAGatchaFrontend/main/images/NavbarBefore.png)
  Once the website displays your username and currency instead of login, you can open some packs! Simply click on the pack you would like to open, buy the pack, and see the card that you got pop up! You can then see it in your collections page, which will have only the cards you have on that specific account.
 
 ## Built Using
