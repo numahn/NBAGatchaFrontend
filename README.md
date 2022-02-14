@@ -34,8 +34,15 @@ In order to open packs and for them to save, you must first create an account. B
  Once the website displays your username and currency instead of login, you can open some packs! Simply click on the pack you would like to open, buy the pack, and see the card that you got pop up! When you open a card, you can see the players stats by hovering over the card, and also see all the cards that are in that pack. You can then see the cards you've earned in your collections page, which will have only the cards you have on that specific account. 
 
  ![Pack Page](https://raw.githubusercontent.com/nali556/NBAGatchaFrontend/main/images/CardPage.png)
- 
- ![Pack Page](https://raw.githubusercontent.com/nali556/NBAGatchaFrontend/main/images/CardDisplay.png)
+ The page before you open cards, displaying the cards that are available
+
+ ![Card Display](https://raw.githubusercontent.com/nali556/NBAGatchaFrontend/main/images/CardDisplay.png)
+ The page after buying packs, the front displaying the image, the back displaying the stats of the players
+
+ ![Collections Page](https://raw.githubusercontent.com/nali556/NBAGatchaFrontend/main/images/CollectionPage.png)
+ The collections page, which only displays the cards the user that is logged in has. It also displays all the stats of the players, unlike the pack pages, which only display the overall stat of the player.
+
+ Want to try it out? Check out the Netlify link!
 
 ## Built Using
 * PostgreSQL
