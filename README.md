@@ -16,7 +16,7 @@ npm install redux react-redux redux-devtools-extension redux-thunk
 [https://dazzling-mestorf-3c615c.netlify.app/]
 
 ## Reflection
-GGC was a about a week-long project for a full stack web development bootcamp with the Tech Talent Residency at CSI. Using what we learned in the previous weeks, me and 3 other students worked on making a website that can simulate the gambling sensation many get when doing so. Specifically, from the NBA2K games, as we felt like is a very problematic issue that exists in the industry, where many kids are inticed to gamble for some players that they would get in game. We thought we can simulate the thrill of gambling by adding a currency option, where you can choose how much currency you want for the account when made, and then start to feel that sensation when the currency is running out.
+GGC was a about a week-long project for a full stack web development bootcamp with the Tech Talent Pipeline Residency at CSI. Using what we learned in the previous weeks, me and 3 other students worked on making a website that can simulate the gambling sensation many get when doing so. Specifically, from the NBA2K games, as we felt like is a very problematic issue that exists in the industry, where many kids are inticed to gamble for some players that they would get in game. We thought we can simulate the thrill of gambling by adding a currency option, where you can choose how much currency you want for the account when made, and then start to feel that sensation when the currency is running out.
 
 Although we have many ideas for this project, this is what we had for the allotted time that was given for us to complete the project. Some other ideas we have are: 
 * Adding a way to get currency, such as a daily login
@@ -27,9 +27,15 @@ Although we have many ideas for this project, this is what we had for the allott
 
 We first created the database ourselves for the cards we wanted. Since we did not have a lot of time, we decided to make 30 entries, 10 for each pack. Once the database was running, we created packs and added animations to the card opening to add a gambling feel to it. This would then save the cards you earned.
 
-In order to open packs and for them to save, you must first create an account. Before that, the navbar at the top of the site will ask you to either signup or login.
 ![Navbar Before](https://raw.githubusercontent.com/nali556/NBAGatchaFrontend/main/images/NavbarBefore.png)
- Once the website displays your username and currency instead of login, you can open some packs! Simply click on the pack you would like to open, buy the pack, and see the card that you got pop up! You can then see it in your collections page, which will have only the cards you have on that specific account.
+In order to open packs and for them to save, you must first create an account. Before that, the navbar at the top of the site will ask you to either signup or login.
+
+![Navbar After](https://raw.githubusercontent.com/nali556/NBAGatchaFrontend/main/images/NavbarAfter.png)
+ Once the website displays your username and currency instead of login, you can open some packs! Simply click on the pack you would like to open, buy the pack, and see the card that you got pop up! When you open a card, you can see the players stats by hovering over the card, and also see all the cards that are in that pack. You can then see the cards you've earned in your collections page, which will have only the cards you have on that specific account. 
+
+ ![Pack Page](https://raw.githubusercontent.com/nali556/NBAGatchaFrontend/main/images/CardPage.png)
+ 
+ ![Pack Page](https://raw.githubusercontent.com/nali556/NBAGatchaFrontend/main/images/CardDisplay.png)
 
 ## Built Using
 * PostgreSQL
