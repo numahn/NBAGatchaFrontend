@@ -13,7 +13,7 @@ npm install aos --save
 npm install redux react-redux redux-devtools-extension redux-thunk
 ```
 ## Deployed on Netlify
-[https://dazzling-mestorf-3c615c.netlify.app/]
+[]
 
 ## Reflection
 GGC was a about a week-long project for a full stack web development bootcamp with the Tech Talent Pipeline Residency at CSI. Using what we learned in the previous weeks, me and 3 other students worked on making a website that can simulate the gambling sensation many get when doing so. Specifically, from the NBA2K games, as we felt like is a very problematic issue that exists in the industry, where many kids are inticed to gamble for some players that they would get in game. We thought we can simulate the thrill of gambling by adding a currency option, where you can choose how much currency you want for the account when made, and then start to feel that sensation when the currency is running out.
@@ -45,9 +45,9 @@ In order to open packs and for them to save, you must first create an account. B
  Want to try it out? Check out the Netlify link!
 
 ## Built Using
-* PostgreSQL
-* Express
-* React
-* Node
+<div>
+  <kbd> <img src="https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E" /> </kbd>
+  <kbd> <img src="https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB" /> </kbd>
+</div>
 * and other React Libraries!
 
