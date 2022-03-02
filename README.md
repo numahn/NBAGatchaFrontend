@@ -3,17 +3,28 @@ The GGC is a alternative to gambling where you can test your luck and get a trad
 
 This project is up and running, but may be a work in progress.
 
+## Built Using
+<div>
+  <kbd> <img src="https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E" /> </kbd>
+  <kbd> <img src="https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB" /> </kbd>
+  <kbd> <img src="https://img.shields.io/badge/redux-%23593d88.svg?style=for-the-badge&logo=redux&logoColor=white" /> </kbd>
+  <kbd> <img src="https://img.shields.io/badge/SASS-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white" /> </kbd>
+  <kbd> <img src="https://img.shields.io/badge/netlify-%23000000.svg?style=for-the-badge&logo=netlify&logoColor=#00C7B7" /> </kbd>
+</div>
+and other React Libraries!
+
+## Deployed on Netlify
+[https://goatgradecollectibles.netlify.app/]
 
 ## Getting Started
-To run the program, download and install a few packages:
+To run the program after pulling the repo, download and install a few packages:
 ```
 npm install react-bootstrap bootstrap@5.1.3
 npm install -D sass
 npm install aos --save
 npm install redux react-redux redux-devtools-extension redux-thunk
 ```
-## Deployed on Netlify
-[https://goatgradecollectibles.netlify.app/]
+
 
 ## Reflection
 GGC was a about a week-long project for a full stack web development bootcamp with the Tech Talent Pipeline Residency at CSI. Using what we learned in the previous weeks, me and 3 other students worked on making a website that can simulate the gambling sensation many get when doing so. Specifically, from the NBA2K games, as we felt like is a very problematic issue that exists in the industry, where many kids are inticed to gamble for some players that they would get in game. We thought we can simulate the thrill of gambling by adding a currency option, where you can choose how much currency you want for the account when made, and then start to feel that sensation when the currency is running out.
@@ -44,15 +55,6 @@ In order to open packs and for them to save, you must first create an account. B
 
  Want to try it out? Check out the Netlify link!
 
-## Built Using
-<div>
-  <kbd> <img src="https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E" /> </kbd>
-  <kbd> <img src="https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB" /> </kbd>
-  <kbd> <img src="https://img.shields.io/badge/redux-%23593d88.svg?style=for-the-badge&logo=redux&logoColor=white" /> </kbd>
-  <kbd> <img src="https://img.shields.io/badge/SASS-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white" /> </kbd>
-  <kbd> <img src="https://img.shields.io/badge/netlify-%23000000.svg?style=for-the-badge&logo=netlify&logoColor=#00C7B7" /> </kbd>
-</div>
-and other React Libraries!
 
 ## Check out the backend repo!
 [https://github.com/BolaGhaly/TTP-Capstone-Project-Backend]
