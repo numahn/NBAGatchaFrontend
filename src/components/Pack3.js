@@ -15,7 +15,7 @@ export default function Pack3() {
   const dispatch = useDispatch(); 
   
  
-    const updateCurrency = async() => {
+    const updateCurrency = async() => { 
       
         try {
           const newCurrency = user.currency-15; 
@@ -151,11 +151,15 @@ export default function Pack3() {
 </div>
 <div className="image d-flex justify-content-center">
 
-<button type="button" class="btn btn-secondary mb-3" onClick={handleSubmit} > 
+{user.currency < 15 ? (
+          <h1>Please add more {vcImg} to Open  </h1>
+        ) : (
+          <button type="button" class="btn btn-secondary mb-3" onClick={handleSubmit} > 
+          Open (15 {vcImg}) 
+          </button>
+        )}
+  
 
-Open (15 {vcImg}) 
-
-</button>
 
 </div>
       <div className="d-flex justify-content-center">

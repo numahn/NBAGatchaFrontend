@@ -150,11 +150,13 @@ export default function Pack2() {
       </div>
       <div className="image d-flex justify-content-center">
 
-      <button type="button" class="btn btn-secondary mb-3" onClick={handleSubmit} > 
- 
- Open (10 {vcImg}) 
-
-    </button>
+      {user.currency < 15 ? (
+          <h1>Please add more {vcImg} to Open  </h1>
+        ) : (
+          <button type="button" class="btn btn-secondary mb-3" onClick={handleSubmit} > 
+          Open (15 {vcImg}) 
+          </button>
+        )}
     
       </div>
       <div className="d-flex justify-content-center">

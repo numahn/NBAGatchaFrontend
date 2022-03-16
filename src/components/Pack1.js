@@ -110,7 +110,6 @@ export default function Pack1() {
     let player_id = chosenCard.player_id;
     console.log(chosenCard);
     console.log(chosenCard.player_id);
-    //Need to add currency subtraction later here
 
     try {
       const response = await fetch(
@@ -149,13 +148,13 @@ export default function Pack1() {
           </div>
         </div>
         <div className="image d-flex justify-content-center">
-          <button
-            type="button"
-            class="btn btn-secondary mb-3"
-            onClick={handleSubmit}
-          >
-            Open (5 {vcImg})
+        {user.currency < 15 ? (
+          <h1>Please add more {vcImg} to Open  </h1>
+        ) : (
+          <button type="button" class="btn btn-secondary mb-3" onClick={handleSubmit} > 
+          Open (15 {vcImg}) 
           </button>
+        )}
         </div>
         <div className="d-flex justify-content-center">
           {cards}
