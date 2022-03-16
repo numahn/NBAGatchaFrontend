@@ -22,6 +22,7 @@ function Signup() {
       currency: currencySign,
     }).then((response) => {
       console.log(response);
+      redirectLogin();  
     });
   };
   if (redirect) {
