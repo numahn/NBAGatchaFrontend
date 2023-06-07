@@ -19,7 +19,7 @@ function Signup() {
       username: usernameSign,
       password: passwordSign,
       email: emailSign,
-      currency: currencySign,
+      accountBalance: currencySign,
     }).then((response) => {
       console.log(response);
       redirectLogin();  

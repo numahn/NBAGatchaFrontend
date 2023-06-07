@@ -19,7 +19,7 @@ function Login() {
   const dispatch = useDispatch();
 
   const login = () => {
-    Axios.post("https://ttp-capstone-project-backend.herokuapp.com/login", {
+    Axios.post("https://ttp-capstone-project-backend.vercel.app/login", {
       email: emailLog,
       password: passwordLog,
     })
