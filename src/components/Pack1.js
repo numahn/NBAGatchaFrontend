@@ -29,7 +29,7 @@ export default function Pack1() {
       const newCurrency = user.currency - 5;
       const body = { currency: newCurrency };
       const response = await fetch(
-        `https://ttp-capstone-project-backend.herokuapp.com/user/${user.id}`,
+        `https://ttp-capstone-project-backend.vercel.app/user/${user.id}`,
         {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
@@ -60,10 +60,10 @@ export default function Pack1() {
   const getPlayers = async () => {
     try {
       const response = await axios(
-        "https://ttp-capstone-project-backend.herokuapp.com/players_cards"
+        "https://ttp-capstone-project-backend.vercel.app/players_cards"
       );
-
       setPlayers(response.data.slice(20, 30));
+      console.log(players)
     } catch (err) {
       console.error(err.message);
     }
@@ -91,12 +91,12 @@ export default function Pack1() {
               </div>
               <div className="theback">
                 <ul className="flex">
-                  <b> Name: {chosenCard.player_name} </b>
-                  <b> Number: {chosenCard.player_number} </b>
-                  <b> Overall:{chosenCard.player_overall_rating} </b>
-                  <b> Team: {chosenCard.player_team} </b>
-                  <b> Height: {chosenCard.player_height} </b>
-                  <b> Weight: {chosenCard.player_weight} </b>
+                  <b> Name: {chosenCard.playerName} </b>
+                  <b> Number: {chosenCard.playerNumber} </b>
+                  <b> Overall:{chosenCard.playerRating} </b>
+                  <b> Team: {chosenCard.playerTeam} </b>
+                  <b> Height: {chosenCard.playerHeight} </b>
+                  <b> Weight: {chosenCard.playerWeight} </b>
                 </ul>
               </div>
             </div>
@@ -107,13 +107,13 @@ export default function Pack1() {
     setCards({ cards: [...cards] });
 
     let user_id = user.id;
-    let player_id = chosenCard.player_id;
+    let player_id = chosenCard.playerId;
     console.log(chosenCard);
-    console.log(chosenCard.player_id);
+    console.log(chosenCard.playerId);
 
     try {
       const response = await fetch(
-        "https://ttp-capstone-project-backend.herokuapp.com/users_collection",
+        "https://ttp-capstone-project-backend.vercel.app/users_collection",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -165,15 +165,15 @@ export default function Pack1() {
           {players.map((player) => (
             <div class="player-card text-white bg-dark mt-4 pt-3">
               <img
-                src={player.player_image}
+                src={player.playerImage}
                 class="card-img-top"
-                alt={player.player_id}
+                alt={player.playerId}
               />
 
               <div class="card-body">
-                <h5 class="card-title">{player.player_name}</h5>
+                <h5 class="card-title">{player.playerName}</h5>
                 <p className="card-text">
-                  Overall: {player.player_overall_rating}
+                  Overall: {player.playerRating}
                 </p>
               </div>
             </div>
