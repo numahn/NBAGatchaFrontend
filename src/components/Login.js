@@ -27,6 +27,7 @@ function Login() {
         console.log(response);
         if (response.status === 200) {
           //if login is correct
+          console.log(response)
           setLoginStatus(`Welcome, ${response.data.data.username}`);
           setTimeout(() => {
             setRedirect(true);

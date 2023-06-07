@@ -15,7 +15,7 @@ function Signup() {
   };
 
   const users = () => {
-    Axios.post("https://ttp-capstone-project-backend.herokuapp.com/signup", {
+    Axios.post("https://ttp-capstone-project-backend.vercel.app/signup", {
       username: usernameSign,
       password: passwordSign,
       email: emailSign,
