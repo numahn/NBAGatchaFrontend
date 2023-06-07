@@ -16,7 +16,7 @@ export default function Pack1() {
     state.user.user,
     state.user.isFetchingUser,
   ]);
-  const [currency, setCurrency] = useState(user.currency);
+  const [currency, setCurrency] = useState(user.accountBalance);
   const dispatch = useDispatch();
 
   const navigate = useNavigate();
@@ -26,8 +26,8 @@ export default function Pack1() {
 
   const updateCurrency = async () => {
     try {
-      const newCurrency = user.currency - 5;
-      const body = { currency: newCurrency };
+      const newCurrency = user.accountBalance - 5;
+      const body = { accountBalance: newCurrency };
       const response = await fetch(
         `https://ttp-capstone-project-backend.vercel.app/user/${user.id}`,
         {
