@@ -22,7 +22,7 @@ function Signup() {
       accountBalance: currencySign,
     }).then((response) => {
       console.log(response);
-      redirectLogin();  
+      redirectLogin();
     });
   };
   if (redirect) {
@@ -30,65 +30,82 @@ function Signup() {
   }
   return (
     <Fragment>
-      <div className="bg5">
-        <div className="homeboxes pt-5">
-          <div className="container mt-5">
+      <div
+        className="bg5"
+        style={{
+          margin: 0,
+          height: "calc(100vh - 88px)",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <div className="homeboxes">
+          <div className="container" style={{ height: "100%" }}>
             <div className="text-center ">
               <div className="Signup ">
                 <h1> Signup</h1>
-                <label type="Username" className="form-label">
+                <label
+                  type="Username"
+                  className="form-label"
+                  style={{ textAlign: "start", width: "100%" }}
+                >
                   Username:
                 </label>
-
                 <input
                   type="text"
                   className=" form-control"
-                  placeholder=" Enter Username..."
+                  placeholder="Enter Username..."
                   onChange={(e) => {
                     setUsernameSign(e.target.value);
                   }}
                 />
               </div>
-
-              <div className="email">
-                <label type="email" className="form-label">
+              <div className="email" style={{ marginTop: "0.5rem" }}>
+                <label
+                  type="email"
+                  className="form-label"
+                  style={{ textAlign: "start", width: "100%" }}
+                >
                   Email:
                 </label>
-
                 <input
                   type="text"
-                  className=" form-control"
-                  placeholder=" Enter email..."
+                  className="form-control"
+                  placeholder="Enter email..."
                   onChange={(e) => {
                     setemailSign(e.target.value);
                   }}
                 />
               </div>
-
+              <div>
+                <label
+                  text="password"
+                  className="form-label mt-2"
+                  style={{ textAlign: "start", width: "100%" }}
+                >
+                  Password:
+                </label>
+                <input
+                  type="password"
+                  className="mb-2 form-control"
+                  placeholder="Enter Password..."
+                  onChange={(e) => {
+                    setPasswordSign(e.target.value);
+                  }}
+                />
+              </div>
               <label
-                text="password"
-                text="passwordSign"
-                className="form-label mt-2"
+                text="currencySign"
+                className="form-label"
+                style={{ textAlign: "start", width: "100%" }}
               >
-                Password:
-              </label>
-              <input
-                type="password"
-                className="mb-3"
-                className="form-control"
-                placeholder="Enter Password..."
-                onChange={(e) => {
-                  setPasswordSign(e.target.value);
-                }}
-              />
-              <label text="currencySign" className="form-label mt-2">
-                Currency:
+                Balance:
               </label>
               <input
                 type="text"
-                className="mb-3"
                 className="form-control"
-                placeholder="Enter Amount to start off with..."
+                placeholder="Enter an amount to start off with..."
                 onChange={(e) => {
                   setCurrencySign(e.target.value);
                 }}
@@ -96,12 +113,18 @@ function Signup() {
               <button onClick={users} className="btn btn-primary mt-3">
                 Sign up
               </button>
+              <em
+                style={{
+                  justifyContent: "center",
+                  display: "inline-flex",
+                  width: "100%",
+                  marginTop: "0.5rem",
+                }}
+              >
+                Already have an account?
+                <Link to="/login" style={{ paddingLeft: "0.5rem"}}>Click here to Log in!</Link>
+              </em>
             </div>
-
-            <em>
-              Already have an account?
-              <Link to="/login">Click here to Log in!</Link>
-            </em>
           </div>
         </div>
       </div>
