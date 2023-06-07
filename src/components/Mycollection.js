@@ -17,13 +17,13 @@ let i
 const getPlayers = async () => {
 
   try {
-    const response =  await axios.get(`https://ttp-capstone-project-backend.herokuapp.com/users_collection/${user.id}`);
+    const response =  await axios.get(`https://ttp-capstone-project-backend.vercel.app/users_collection/${user.id}`);
     result=response.data; 
-    result2 = result.map((e) => e.player_id)
+    result2 = result.map((e) => e.playerId)
     i=0
     result2.map((e) => {
       let playerAPIResponse = axios.get(
-        `https://ttp-capstone-project-backend.herokuapp.com/players_cards/${e}`
+        `https://ttp-capstone-project-backend.vercel.app/players_cards/${e}`
       ).then((response) => {
 
         console.log(response.data)
@@ -38,24 +38,24 @@ const getPlayers = async () => {
         ReactDOM.render(
           <div class="collection-card text-white bg-dark me-4 mb-3 mt-4">
             <img
-              src={response.data.player_image}
+              src={response.data.playerImage}
               class="card-img-top"
-              alt={response.data.player_id}
+              alt={response.data.playerId}
             />
 
             <div class="card-body">
-              <h5 class="card-title">{response.data.player_name}</h5>
+              <h5 class="card-title">{response.data.playerName}</h5>
               <p className="card-text">
-                Overall: {response.data.player_overall_rating}
+                Overall: {response.data.player_overallRating}
               </p>
               <p className="card-text">
-                Team: {response.data.player_team}
+                Team: {response.data.playerTeam}
               </p>
               <p className="card-text">
-                Number: {response.data.player_number}
+                Number: {response.data.playerNumber}
               </p>
               <p className="card-text">
-                Height: {response.data.player_height}, Weight: {response.data.player_weight}
+                Height: {response.data.playerHeight}, Weight: {response.data.playerWeight}
               </p>
             </div>
           </div>, document.getElementById(`cards${i}`))
