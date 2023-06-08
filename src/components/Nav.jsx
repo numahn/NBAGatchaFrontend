@@ -25,32 +25,25 @@ function Nav() {
             </ul>
             <ul className="navbar-nav mb-2 mb-lg-0">
               <Link to="/">
-                <li className="nav-item me-4 home">
-                  <a className="navbar-brand">Home</a>
-                </li>
+                <a className="navbar-brand me-4">Home</a>
               </Link>
               <Link to="/store">
-                <li className="nav-item me-4 store">
-                  <a className="navbar-brand">Store</a>
-                </li>
+                <a className="navbar-brand me-4">Store</a>
               </Link>
               <Link to="/mycollection">
-                <li className="nav-item me-4 collection">
-                  <a className="navbar-brand">My Collection</a>
-                </li>
+                <a className="navbar-brand me-4">My Collection</a>
               </Link>
-
               {isFetchingUser || user === {} ? (
-                <div>
+                <div style={{ display: "flex", flexDirection: "column" }}>
                   <Link to="/login">
-                    <li className="nav-item me-4 login">
-                      <a className="navbar-brand">Log in</a>
-                    </li>
+                    <a className="navbar-brand" style={{ margin: 0 }}>
+                      Log in
+                    </a>
                   </Link>
                   <Link to="/signup">
-                    <li className="nav-item me-4 signup">
-                      <a className="navbar-brand">Sign up</a>
-                    </li>
+                    <a className="navbar-brand" style={{ margin: 0 }}>
+                      Sign up
+                    </a>
                   </Link>
                 </div>
               ) : (
