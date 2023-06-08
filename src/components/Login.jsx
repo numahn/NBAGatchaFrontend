@@ -6,11 +6,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { getUserThunk } from "../redux/actions/userThunk";
 
 function Login() {
-  const [emailLog, setEmailLog] = useState("");
-  const [passwordLog, setpasswordLog] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [loginStatus, setLoginStatus] = useState("");
   const [redirect, setRedirect] = useState(false); //redirect to main page
-
   const navigate = useNavigate();
   const redirectSignup = () => {
     navigate("/signup");
@@ -22,8 +21,8 @@ function Login() {
     const response = await axios.post(
       "https://ttp-capstone-project-backend.vercel.app/login",
       {
-        email: emailLog,
-        password: passwordLog,
+        email,
+        password,
       }
     );
     console.log(response);
@@ -36,7 +35,6 @@ function Login() {
       dispatch(getUserThunk(response.data[0].userId));
     }
 
-    
     // .catch((error) => {
     //   if (error.response.status === 400) {
     //     //if email is incorrect
@@ -63,13 +61,26 @@ function Login() {
   }
   return (
     <Fragment>
-      <div className="bg4">
-        <div className="homeboxes pt-5">
-          <div className="container">
+      <div
+        className="bg4"
+        style={{
+          margin: 0,
+          height: "calc(100vh - 88px)",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <div className="homeboxes">
+          <div className="container" style={{ height: "100%" }}>
             <div className="text-center">
               <div className="">
-                <h1> Login </h1>
-                <label htmlFor="Username" className="form-label">
+                <h1>Login</h1>
+                <label
+                  htmlFor="Username"
+                  className="form-label"
+                  style={{ textAlign: "start", width: "100%" }}
+                >
                   Email:
                 </label>
                 <input
@@ -77,22 +88,23 @@ function Login() {
                   className=" form-control"
                   placeholder="Email..."
                   onChange={(e) => {
-                    setEmailLog(e.target.value);
+                    setEmail(e.target.value);
                   }}
                 />
               </div>
-
-              <label type="password" className="form-label mt-2">
+              <label
+                type="password"
+                className="form-label mt-2"
+                style={{ textAlign: "start", width: "100%" }}
+              >
                 Password:
               </label>
               <input
                 type="password"
-                className="mb-3"
-                className="form-control"
+                className="mb-3 form-control"
                 placeholder="Password..."
-                type="password"
                 onChange={(e) => {
-                  setpasswordLog(e.target.value);
+                  setPassword(e.target.value);
                 }}
               />
 
@@ -101,17 +113,16 @@ function Login() {
               </button>
             </div>
             <h1> {loginStatus}</h1>
-            {isFetchingUser && user === {} ? (
-              <div>Fetching User...</div>
-            ) : (
-              <div>
-                <div>{user.username}</div>
-              </div>
-            )}
-
-            <em>
-              Don't have an account already? Click
-              <Link to="/signup"> Here to Sign up!</Link>
+            <em
+              style={{
+                justifyContent: "center",
+                display: "block",
+                width: "100%",
+                marginTop: "1.5rem",
+              }}
+            >
+              Don't have an account already? Click{" "}
+              <Link to="/signup">here</Link> to sign up!
             </em>
           </div>
         </div>
