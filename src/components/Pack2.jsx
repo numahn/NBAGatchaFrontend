@@ -16,18 +16,14 @@ export default function Pack3() {
 
   const updateCurrency = async () => {
     try {
-      const newCurrency = user.currency - 15;
-      const body = { currency: newCurrency };
-      const response = await fetch(
-        `https://ttp-capstone-project-backend.vercel.app/user/${user.id}`,
+      const newCurrency = user.accountBalance - 10;
+      const response = await axios.put(
+        `https://ttp-capstone-project-backend.vercel.app/user/${user.userId}`,
         {
-          method: "PUT",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(body),
+          accountBalance: newCurrency,
         }
       );
-      dispatch(getUserThunk(user.id));
-      console.log(newCurrency);
+      dispatch(getUserThunk(user.userId));
     } catch (err) {
       console.error(err.message);
     }
@@ -93,29 +89,20 @@ export default function Pack3() {
     );
     setCards({ cards: [...cards] });
 
-    console.log(chosenCard);
-    console.log(chosenCard.playerId);
-    //Need to add currency subtraction later here
-
-    let user_id = user.userId;
-    let player_id = chosenCard.playerId;
-    console.log(chosenCard);
-    console.log(chosenCard.playerId);
-    //Need to add currency subtraction later here
-
     try {
-      const response = await fetch(
+      const response = await axios.post(
         "https://ttp-capstone-project-backend.vercel.app/users_collection",
         {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ user_id, player_id }),
+          userId: user.userId,
+          playerId: chosenCard.playerId,
         }
       );
+      console.log(response);
     } catch (error) {
       console.error(error.message);
     }
   };
+
   return (
     <Fragment>
       <div className="bg3">
