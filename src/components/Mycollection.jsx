@@ -60,7 +60,7 @@ function Mycollection() {
 
   useEffect(() => {
     getPlayers();
-  }, []);
+  });
 
   const [offsetY, setOffsetY] = useState(0);
   const handleScroll = () => setOffsetY(window.pageYOffset);

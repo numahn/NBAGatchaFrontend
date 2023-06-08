@@ -18,7 +18,7 @@ function Store() {
     Aos.init({ duration: 2000 });
   }, []);
 
-  const renderContent = () => <></>;
+ 
 
   //Displaying card packs
   return (

@@ -1,6 +1,6 @@
 import React, { Fragment, useState, useEffect } from "react";
 import { useSelector } from "react-redux";
-import axios, { Axios } from "axios";
+import axios from "axios";
 import { getUserThunk } from "../redux/actions/userThunk";
 import { useDispatch } from "react-redux";
 import "./App.scss";
@@ -9,7 +9,7 @@ export default function Pack2() {
     state.user.user,
     state.user.isFetchingUser,
   ]);
-  const [currency, setCurrency] = useState(user.currency);
+  
 
   const [{ cards }, setCards] = useState({ cards: [] });
 
@@ -119,7 +119,7 @@ export default function Pack2() {
           </div>
         </div>
         <div className="image d-flex justify-content-center">
-          {user.currency < 15 ? (
+          {user.currency < 10 ? (
             <h1>Please add more {vcImg} to Open </h1>
           ) : (
             <button
@@ -127,7 +127,7 @@ export default function Pack2() {
               className="btn btn-secondary mb-3"
               onClick={handleSubmit}
             >
-              Open (15 {vcImg})
+              Open (10 {vcImg})
             </button>
           )}
         </div>

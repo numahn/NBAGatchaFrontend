@@ -1,6 +1,5 @@
 import React, { useState, useEffect, Fragment } from "react";
 import { useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
 import "./App.scss";
 
 function Home() {
@@ -11,10 +10,7 @@ function Home() {
 
   //redux
 
-  const [user, isFetchingUser] = useSelector((state) => [
-    state.user.user,
-    state.user.isFetchingUser,
-  ]);
+  
 
   const [offsetY, setOffsetY] = useState(0);
   const handleScroll = () => setOffsetY(window.pageYOffset);

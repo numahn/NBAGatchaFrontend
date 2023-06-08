@@ -1,6 +1,5 @@
 import React, { Fragment, useState, useEffect } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
 import "./App.scss";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
@@ -16,17 +15,14 @@ export default function Pack1() {
     state.user.user,
     state.user.isFetchingUser,
   ]);
-  const [currency, setCurrency] = useState(user.accountBalance);
   const dispatch = useDispatch();
 
-  const navigate = useNavigate();
-  const redirectCardopen = () => {
-    navigate("/cardopen");
-  };
+
+ 
 
   const updateCurrency = async () => {
     try {
-      const newCurrency = user.accountBalance - 10;
+      const newCurrency = user.accountBalance - 5;
       const response = await axios.put(
         `https://ttp-capstone-project-backend.vercel.app/user/${user.userId}`,
         {
@@ -46,7 +42,7 @@ export default function Pack1() {
 
   const [{ cards }, setCards] = useState({ cards: [] });
   const [players, setPlayers] = useState([]);
-  const [randomcard, setrandomCard] = useState([]);
+
   const vcImg = (
     <img
       src="https://i.kinja-img.com/gawker-media/image/upload/t_original/rqzu9vldxphnlthogvrs"
@@ -67,7 +63,7 @@ export default function Pack1() {
   };
   useEffect(() => {
     getPlayers();
-  }, []);
+  });
 
   const getRandom = async () => {
     //Get random number from players array, 0-9
@@ -136,7 +132,7 @@ export default function Pack1() {
           </div>
         </div>
         <div className="image d-flex justify-content-center">
-          {user.currency < 15 ? (
+          {user.currency < 5 ? (
             <h1>Please add more {vcImg} to Open </h1>
           ) : (
             <button
@@ -144,7 +140,7 @@ export default function Pack1() {
               className="btn btn-secondary mb-3"
               onClick={handleSubmit}
             >
-              Open (15 {vcImg})
+              Open (5 {vcImg})
             </button>
           )}
         </div>

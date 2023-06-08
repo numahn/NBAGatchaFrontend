@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { Fragment, useState } from "react";
-import { useNavigate, Link, Navigate } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 
 function Signup() {
   const [username, setUsername] = useState("");
@@ -9,10 +9,8 @@ function Signup() {
   const [accountBalance, setAccountBalance] = useState();
   const [redirect, setRedirect] = useState(false); //redirect to main page
 
-  const navigate = useNavigate();
-  const redirectLogin = () => {
-    navigate("/login");
-  };
+  
+
 
   const userSign = async () => {
     const response = await axios.post(

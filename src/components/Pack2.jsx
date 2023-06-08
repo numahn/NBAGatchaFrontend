@@ -9,14 +9,13 @@ export default function Pack3() {
     state.user.user,
     state.user.isFetchingUser,
   ]);
-  const [currency, setCurrency] = useState(user.currency);
-
+  
   const [{ cards }, setCards] = useState({ cards: [] });
   const dispatch = useDispatch();
 
   const updateCurrency = async () => {
     try {
-      const newCurrency = user.accountBalance - 10;
+      const newCurrency = user.accountBalance - 15;
       const response = await axios.put(
         `https://ttp-capstone-project-backend.vercel.app/user/${user.userId}`,
         {
