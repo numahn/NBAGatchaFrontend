@@ -29,8 +29,6 @@ function Nav() {
                 className="navbar-brand me-4"
                 style={{
                   margin: 0,
-                  textDecoration: "underline",
-                  textDecorationColor: "#0d6efd",
                 }}
               >
                 Home
@@ -40,8 +38,6 @@ function Nav() {
                 className="navbar-brand me-4"
                 style={{
                   margin: 0,
-                  textDecoration: "underline",
-                  textDecorationColor: "#0d6efd",
                 }}
               >
                 Store
@@ -51,8 +47,6 @@ function Nav() {
                 className="navbar-brand me-4"
                 style={{
                   margin: 0,
-                  textDecoration: "underline",
-                  textDecorationColor: "#0d6efd",
                 }}
               >
                 My Collection
@@ -64,8 +58,6 @@ function Nav() {
                     className="navbar-brand"
                     style={{
                       margin: 0,
-                      textDecoration: "underline",
-                      textDecorationColor: "#0d6efd",
                     }}
                   >
                     Log in
@@ -75,8 +67,6 @@ function Nav() {
                     className="navbar-brand"
                     style={{
                       margin: 0,
-                      textDecoration: "underline",
-                      textDecorationColor: "#0d6efd",
                     }}
                   >
                     Sign up
