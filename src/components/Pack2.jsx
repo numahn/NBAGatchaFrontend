@@ -137,7 +137,7 @@ export default function Pack3() {
           ) : (
             <button
               type="button"
-              class="btn btn-secondary mb-3"
+              className="btn btn-secondary mb-3"
               onClick={handleSubmit}
             >
               Open (15 {vcImg})
@@ -151,14 +151,14 @@ export default function Pack3() {
 
         <div className="d-flex flex-wrap justify-content-around mt-4 mx-3">
           {players.map((player) => (
-            <div class="player-card text-white bg-dark mt-4">
+            <div className="player-card text-white bg-dark mt-4">
               <img
                 src={player.playerImage}
-                class="card-img-top"
+                className="card-img-top"
                 alt={player.playerId}
               />
-              <div class="card-body">
-                <h5 class="card-title">{player.playerName}</h5>
+              <div className="card-body">
+                <h5 className="card-title">{player.playerName}</h5>
                 <p className="card-text">Overall: {player.playerRating}</p>
               </div>
             </div>

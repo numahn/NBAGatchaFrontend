@@ -142,13 +142,17 @@ export default function Pack1() {
           </div>
         </div>
         <div className="image d-flex justify-content-center">
-        {user.currency < 15 ? (
-          <h1>Please add more {vcImg} to Open  </h1>
-        ) : (
-          <button type="button" class="btn btn-secondary mb-3" onClick={handleSubmit} > 
-          Open (15 {vcImg}) 
-          </button>
-        )}
+          {user.currency < 15 ? (
+            <h1>Please add more {vcImg} to Open </h1>
+          ) : (
+            <button
+              type="button"
+              className="btn btn-secondary mb-3"
+              onClick={handleSubmit}
+            >
+              Open (15 {vcImg})
+            </button>
+          )}
         </div>
         <div className="d-flex justify-content-center">
           {cards}
@@ -157,18 +161,16 @@ export default function Pack1() {
 
         <div className="d-flex flex-wrap justify-content-around mt-4 mx-3 pt-5">
           {players.map((player) => (
-            <div class="player-card text-white bg-dark mt-4 pt-3">
+            <div className="player-card text-white bg-dark mt-4 pt-3">
               <img
                 src={player.playerImage}
-                class="card-img-top"
+                className="card-img-top"
                 alt={player.playerId}
               />
 
-              <div class="card-body">
-                <h5 class="card-title">{player.playerName}</h5>
-                <p className="card-text">
-                  Overall: {player.playerRating}
-                </p>
+              <div className="card-body">
+                <h5 className="card-title">{player.playerName}</h5>
+                <p className="card-text">Overall: {player.playerRating}</p>
               </div>
             </div>
           ))}
