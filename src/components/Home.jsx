@@ -24,7 +24,7 @@ function Home() {
     <>
       <div className="homegrid">
         <div className="homeboxes">
-          <p>
+          <div>
             <h1 className="text-center mt-2">About Us</h1>
             <div className="text-center mt-5">
               <p>
@@ -46,7 +46,7 @@ function Home() {
                 Sign up
               </button>
             </div>
-          </p>
+          </div>
         </div>
       </div>
     </>

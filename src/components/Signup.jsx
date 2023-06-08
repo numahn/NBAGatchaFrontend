@@ -6,31 +6,25 @@ function Signup() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
-  const [accountBalance, setAccountBalance] = useState();
+  const [accountBalance, setAccountBalance] = useState(0);
   const [redirect, setRedirect] = useState(false); //redirect to main page
 
   
 
 
   const userSign = async () => {
-    const response = await axios.post(
-      "https://ttp-capstone-project-backend.vercel.app/signup",
-      {
+    let response;
+    try {
+      response = await axios.post("http://localhost:5200/signup", {
         username,
-        password,
         email,
+        password,
         accountBalance,
-      }
-    );
-
-    console.log(username);
-    console.log(password);
-    console.log(email);
-    console.log(accountBalance);
-
-    // .then((response) => {
-    //   redirectLogin();
-    // });
+      });
+    } catch (error) {
+      console.log(error);
+      console.log(response);
+    }
   };
 
   if (redirect) {
@@ -119,10 +113,7 @@ function Signup() {
                   setAccountBalance(e.target.value);
                 }}
               />
-              <button
-                onClick={() => userSign()}
-                className="btn btn-primary mt-3"
-              >
+              <button onClick={userSign} className="btn btn-primary mt-3">
                 Sign up
               </button>
               <em
