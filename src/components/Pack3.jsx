@@ -26,22 +26,19 @@ export default function Pack1() {
 
   const updateCurrency = async () => {
     try {
-      const newCurrency = user.accountBalance - 5;
-      const body = { accountBalance: newCurrency };
-      const response = await fetch(
+      const newCurrency = user.accountBalance - 10;
+      const response = await axios.put(
         `https://ttp-capstone-project-backend.vercel.app/user/${user.userId}`,
         {
-          method: "PUT",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(body),
+          accountBalance: newCurrency,
         }
       );
-      dispatch(getUserThunk(user.id));
-      console.log(newCurrency);
+      dispatch(getUserThunk(user.userId));
     } catch (err) {
       console.error(err.message);
     }
   };
+  
   const handleSubmit = () => {
     getRandom();
     updateCurrency();
@@ -55,7 +52,7 @@ export default function Pack1() {
       src="https://i.kinja-img.com/gawker-media/image/upload/t_original/rqzu9vldxphnlthogvrs"
       alt="$"
       width="5%"
-    ></img>
+    />
   );
   const getPlayers = async () => {
     try {
@@ -63,7 +60,7 @@ export default function Pack1() {
         "https://ttp-capstone-project-backend.vercel.app/players_cards"
       );
       setPlayers(response.data.slice(20, 30));
-      console.log(players)
+      console.log(players);
     } catch (err) {
       console.error(err.message);
     }
@@ -84,9 +81,9 @@ export default function Pack1() {
             <div className="thecard">
               <div className="thefront">
                 <img
-                  src={chosenCard.player_image}
+                  src={chosenCard.playerImage}
                   className="card-img-top"
-                  alt={chosenCard.player_id}
+                  alt={chosenCard.playerId}
                 />
               </div>
               <div className="theback">
@@ -111,17 +108,14 @@ export default function Pack1() {
         "https://ttp-capstone-project-backend.vercel.app/users_collection",
         {
           userId: user.userId,
-          playerId: chosenCard.playerId
+          playerId: chosenCard.playerId,
         }
       );
+      console.log(response);
     } catch (error) {
       console.error(error.message);
     }
   };
-
-  // setRandomCard = () => {
-
-  // }
 
   return (
     <Fragment>
@@ -154,10 +148,7 @@ export default function Pack1() {
             </button>
           )}
         </div>
-        <div className="d-flex justify-content-center">
-          {cards}
-          <div></div>
-        </div>
+        <div className="d-flex justify-content-center">{cards}</div>
 
         <div className="d-flex flex-wrap justify-content-around mt-4 mx-3 pt-5">
           {players.map((player) => (
@@ -167,7 +158,6 @@ export default function Pack1() {
                 className="card-img-top"
                 alt={player.playerId}
               />
-
               <div className="card-body">
                 <h5 className="card-title">{player.playerName}</h5>
                 <p className="card-text">Overall: {player.playerRating}</p>
