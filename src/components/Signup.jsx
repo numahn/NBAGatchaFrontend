@@ -1,12 +1,12 @@
+import axios from "axios";
 import React, { Fragment, useState } from "react";
 import { useNavigate, Link, Navigate } from "react-router-dom";
-import Axios from "axios";
 
 function Signup() {
-  const [usernameSign, setUsernameSign] = useState("");
-  const [passwordSign, setPasswordSign] = useState("");
-  const [emailSign, setemailSign] = useState("");
-  const [currencySign, setCurrencySign] = useState();
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
+  const [accountBalance, setAccountBalance] = useState();
   const [redirect, setRedirect] = useState(false); //redirect to main page
 
   const navigate = useNavigate();
@@ -14,20 +14,31 @@ function Signup() {
     navigate("/login");
   };
 
-  const users = () => {
-    Axios.post("https://ttp-capstone-project-backend.vercel.app/signup", {
-      username: usernameSign,
-      password: passwordSign,
-      email: emailSign,
-      accountBalance: currencySign,
-    }).then((response) => {
-      console.log(response);
-      redirectLogin();
-    });
+  const userSign = async () => {
+    const response = await axios.post(
+      "https://ttp-capstone-project-backend.vercel.app/signup",
+      {
+        username,
+        password,
+        email,
+        accountBalance,
+      }
+    );
+
+    console.log(username);
+    console.log(password);
+    console.log(email);
+    console.log(accountBalance);
+
+    // .then((response) => {
+    //   redirectLogin();
+    // });
   };
+
   if (redirect) {
     return <Navigate to="/login" />; //redirect to home upon correct login
   }
+
   return (
     <Fragment>
       <div
@@ -54,10 +65,10 @@ function Signup() {
                 </label>
                 <input
                   type="text"
-                  className=" form-control"
+                  className="form-control"
                   placeholder="Enter Username..."
                   onChange={(e) => {
-                    setUsernameSign(e.target.value);
+                    setUsername(e.target.value);
                   }}
                 />
               </div>
@@ -74,7 +85,7 @@ function Signup() {
                   className="form-control"
                   placeholder="Enter email..."
                   onChange={(e) => {
-                    setemailSign(e.target.value);
+                    setEmail(e.target.value);
                   }}
                 />
               </div>
@@ -91,7 +102,7 @@ function Signup() {
                   className="mb-2 form-control"
                   placeholder="Enter Password..."
                   onChange={(e) => {
-                    setPasswordSign(e.target.value);
+                    setPassword(e.target.value);
                   }}
                 />
               </div>
@@ -107,10 +118,13 @@ function Signup() {
                 className="form-control"
                 placeholder="Enter an amount to start off with..."
                 onChange={(e) => {
-                  setCurrencySign(e.target.value);
+                  setAccountBalance(e.target.value);
                 }}
               />
-              <button onClick={users} className="btn btn-primary mt-3">
+              <button
+                onClick={() => userSign()}
+                className="btn btn-primary mt-3"
+              >
                 Sign up
               </button>
               <em
@@ -122,7 +136,9 @@ function Signup() {
                 }}
               >
                 Already have an account?
-                <Link to="/login" style={{ paddingLeft: "0.5rem"}}>Click here to Log in!</Link>
+                <Link to="/login" style={{ paddingLeft: "0.5rem" }}>
+                  Click here to Log in!
+                </Link>
               </em>
             </div>
           </div>
