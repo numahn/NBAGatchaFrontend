@@ -30,7 +30,7 @@ ReactDOM.render(
           <Route path="/pack1" element={<Pack1 />} />
           <Route path="/pack2" element={<Pack2 />} />
           <Route path="/pack3" element={<Pack3 />} />
-          <Route path="/Mycollection" element={<Mycollection/>} />
+          <Route path="/mycollection" element={<Mycollection/>} />
           
         </Routes>
       </Provider>

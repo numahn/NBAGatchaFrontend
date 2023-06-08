@@ -11,7 +11,6 @@ export const getUserThunk = (id) => async (dispatch) => {
     const response =
       await axios.get(`https://ttp-capstone-project-backend.vercel.app/
 user/${id}`);
-    console.log(response);
     const user = response.data[0];
     dispatch({ type: FETCH_USER, payload: user });
     dispatch({ type: END_FETCHING_USER });

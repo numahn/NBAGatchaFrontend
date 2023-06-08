@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom";
 import React, { Fragment } from "react";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 function Nav() {
   const [user, isFetchingUser] = useSelector((state) => [
     state.user.user,
@@ -24,26 +24,62 @@ function Nav() {
               </li>
             </ul>
             <ul className="navbar-nav mb-2 mb-lg-0">
-              <Link to="/">
-                <a className="navbar-brand me-4">Home</a>
+              <Link
+                to="/"
+                className="navbar-brand me-4"
+                style={{
+                  margin: 0,
+                  textDecoration: "underline",
+                  textDecorationColor: "#0d6efd",
+                }}
+              >
+                Home
               </Link>
-              <Link to="/store">
-                <a className="navbar-brand me-4">Store</a>
+              <Link
+                to="/store"
+                className="navbar-brand me-4"
+                style={{
+                  margin: 0,
+                  textDecoration: "underline",
+                  textDecorationColor: "#0d6efd",
+                }}
+              >
+                Store
               </Link>
-              <Link to="/mycollection">
-                <a className="navbar-brand me-4">My Collection</a>
+              <Link
+                to="/mycollection"
+                className="navbar-brand me-4"
+                style={{
+                  margin: 0,
+                  textDecoration: "underline",
+                  textDecorationColor: "#0d6efd",
+                }}
+              >
+                My Collection
               </Link>
               {isFetchingUser || user === {} ? (
                 <div style={{ display: "flex", flexDirection: "column" }}>
-                  <Link to="/login">
-                    <a className="navbar-brand" style={{ margin: 0 }}>
-                      Log in
-                    </a>
+                  <Link
+                    to="/login"
+                    className="navbar-brand"
+                    style={{
+                      margin: 0,
+                      textDecoration: "underline",
+                      textDecorationColor: "#0d6efd",
+                    }}
+                  >
+                    Log in
                   </Link>
-                  <Link to="/signup">
-                    <a className="navbar-brand" style={{ margin: 0 }}>
-                      Sign up
-                    </a>
+                  <Link
+                    to="/signup"
+                    className="navbar-brand"
+                    style={{
+                      margin: 0,
+                      textDecoration: "underline",
+                      textDecorationColor: "#0d6efd",
+                    }}
+                  >
+                    Sign up
                   </Link>
                 </div>
               ) : (
