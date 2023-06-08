@@ -9,18 +9,18 @@ function Signup() {
   const [accountBalance, setAccountBalance] = useState(0);
   const [redirect, setRedirect] = useState(false); //redirect to main page
 
-  
-
-
   const userSign = async () => {
     let response;
     try {
-      response = await axios.post("http://localhost:5200/signup", {
-        username,
-        email,
-        password,
-        accountBalance,
-      });
+      response = await axios.post(
+        "https://ttp-capstone-project-backend.vercel.app/signup",
+        {
+          username,
+          email,
+          password,
+          accountBalance,
+        }
+      );
     } catch (error) {
       console.log(error);
       console.log(response);

@@ -14,10 +14,13 @@ function Login() {
   const dispatch = useDispatch();
 
   const login = async () => {
-    const response = await axios.post("http://localhost:5200/login", {
-      email,
-      password,
-    });
+    const response = await axios.post(
+      "https://ttp-capstone-project-backend.vercel.app/login",
+      {
+        email,
+        password,
+      }
+    );
 
     if (response.status === 200) {
       setLoginStatus(`Welcome back, ${response.data[0].username}`);
