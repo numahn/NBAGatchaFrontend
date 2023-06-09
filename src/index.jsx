@@ -14,13 +14,15 @@ import Pack2 from "./components/Pack2";
 import Pack3 from "./components/Pack3";
 import Store from "./components/Store";
 import Mycollection from "./components/Mycollection";
-import 'bootstrap/dist/css/bootstrap.min.css';
-
+import "bootstrap/dist/css/bootstrap.min.css";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-    <Provider store={store}>
+      <Provider store={store}>
+        <ToastContainer style={{ padding: 0 }} />
         <Nav />
         <Routes>
           <Route path="/" element={<App />} />
@@ -30,8 +32,7 @@ ReactDOM.render(
           <Route path="/pack1" element={<Pack1 />} />
           <Route path="/pack2" element={<Pack2 />} />
           <Route path="/pack3" element={<Pack3 />} />
-          <Route path="/mycollection" element={<Mycollection/>} />
-          
+          <Route path="/mycollection" element={<Mycollection />} />
         </Routes>
       </Provider>
     </BrowserRouter>

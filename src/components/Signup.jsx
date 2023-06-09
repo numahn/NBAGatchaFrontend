@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { Fragment, useState } from "react";
 import { Link, Navigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 function Signup() {
   const [username, setUsername] = useState("");
@@ -9,26 +10,46 @@ function Signup() {
   const [accountBalance, setAccountBalance] = useState(0);
   const [redirect, setRedirect] = useState(false); //redirect to main page
 
-  const userSign = async () => {
-    let response;
-    try {
-      response = await axios.post(
-        "https://ttp-capstone-project-backend.vercel.app/signup",
-        {
-          username,
-          email,
-          password,
-          accountBalance,
-        }
-      );
-    } catch (error) {
-      console.log(error);
-      console.log(response);
+  const userSignUp = async (e) => {
+    e.preventDefault();
+    let response = await axios.post("http://localhost:5200/signup", {
+      username,
+      email,
+      password,
+      accountBalance,
+    });
+
+    const tempStatus = response.data[0]?.status ?? response.data?.status;
+
+    if (tempStatus !== 200) {
+      toast("🛑 " + response.data.message, {
+        position: "top-right",
+        autoClose: 2500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        theme: "dark",
+        progressStyle: { background: "red" },
+      });
+      return;
     }
+
+    toast("✅ " + response.data[0].message, {
+      position: "top-right",
+      autoClose: 2500,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: true,
+      theme: "dark",
+      progressStyle: { background: "#00B700" },
+    });
+    setRedirect(true);
   };
 
   if (redirect) {
-    return <Navigate to="/login" />; //redirect to home upon correct login
+    return <Navigate to="/login" />; //redirect to login upon correct sign up 
   }
 
   return (
@@ -45,9 +66,9 @@ function Signup() {
       >
         <div className="homeboxes">
           <div className="container" style={{ height: "100%" }}>
-            <div className="text-center ">
+            <form className="text-center" onSubmit={(e) => userSignUp(e)}>
               <div className="Signup ">
-                <h1> Signup</h1>
+                <h1>Signup</h1>
                 <label
                   type="Username"
                   className="form-label"
@@ -62,6 +83,7 @@ function Signup() {
                   onChange={(e) => {
                     setUsername(e.target.value);
                   }}
+                  required
                 />
               </div>
               <div className="email" style={{ marginTop: "0.5rem" }}>
@@ -79,6 +101,7 @@ function Signup() {
                   onChange={(e) => {
                     setEmail(e.target.value);
                   }}
+                  required
                 />
               </div>
               <div>
@@ -96,6 +119,7 @@ function Signup() {
                   onChange={(e) => {
                     setPassword(e.target.value);
                   }}
+                  required
                 />
               </div>
               <label
@@ -106,14 +130,15 @@ function Signup() {
                 Balance:
               </label>
               <input
-                type="text"
+                type="number"
                 className="form-control"
                 placeholder="Enter an amount to start off with..."
                 onChange={(e) => {
                   setAccountBalance(e.target.value);
                 }}
+                required
               />
-              <button onClick={userSign} className="btn btn-primary mt-3">
+              <button type="submit" className="btn btn-primary mt-3">
                 Sign up
               </button>
               <em
@@ -129,7 +154,7 @@ function Signup() {
                   Click here to Log in!
                 </Link>
               </em>
-            </div>
+            </form>
           </div>
         </div>
       </div>
