@@ -11,10 +11,13 @@ function Login() {
 
   const userLogin = async (e) => {
     e.preventDefault();
-    const response = await axios.post("http://localhost:5200/login", {
-      email,
-      password,
-    });
+    const response = await axios.post(
+      "https://ttp-capstone-project-backend.vercel.app/login",
+      {
+        email,
+        password,
+      }
+    );
 
     if (response.data.status !== 200) {
       toast("🛑 " + response.data.message, {
@@ -44,7 +47,7 @@ function Login() {
   };
 
   if (redirect) {
-    return <Navigate to="/" />; //redirect to home upon correct login
+    return <Navigate to="/store" />; //redirect to home upon correct login
   }
 
   return (
@@ -97,7 +100,9 @@ function Login() {
                 }}
                 required
               />
-              <button className="btn btn-primary mt-3">Login</button>
+              <button type="submit" className="btn btn-primary mt-3">
+                Login
+              </button>
             </form>
             <em
               style={{

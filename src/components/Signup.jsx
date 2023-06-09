@@ -12,12 +12,15 @@ function Signup() {
 
   const userSignUp = async (e) => {
     e.preventDefault();
-    let response = await axios.post("http://localhost:5200/signup", {
-      username,
-      email,
-      password,
-      accountBalance,
-    });
+    let response = await axios.post(
+      "https://ttp-capstone-project-backend.vercel.app/signup",
+      {
+        username,
+        email,
+        password,
+        accountBalance,
+      }
+    );
 
     const tempStatus = response.data[0]?.status ?? response.data?.status;
 
