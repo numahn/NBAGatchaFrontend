@@ -50,7 +50,7 @@ function Login() {
   };
 
   if (redirect) {
-    return <Navigate to="/store" />; //redirect to home upon correct login
+    return <Navigate to="/store" />; //redirect to store upon correct login
   }
 
   return (
