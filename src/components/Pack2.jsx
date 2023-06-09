@@ -96,7 +96,6 @@ export default function Pack3() {
           playerId: chosenCard.playerId,
         }
       );
-      console.log(response);
     } catch (error) {
       console.error(error.message);
     }

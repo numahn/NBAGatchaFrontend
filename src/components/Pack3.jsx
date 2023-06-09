@@ -56,7 +56,6 @@ export default function Pack1() {
         "https://ttp-capstone-project-backend.vercel.app/players_cards"
       );
       setPlayers(response.data.slice(20, 30));
-      console.log(players);
     } catch (err) {
       console.error(err.message);
     }
@@ -107,7 +106,6 @@ export default function Pack1() {
           playerId: chosenCard.playerId,
         }
       );
-      console.log(response);
     } catch (error) {
       console.error(error.message);
     }

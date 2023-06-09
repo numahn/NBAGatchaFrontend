@@ -14,7 +14,6 @@ function Mycollection() {
     const response = await axios.get(
       `https://ttp-capstone-project-backend.vercel.app/users_collection/${user.userId}`
     );
-    console.log(response);
     let result = response.data;
     let result2 = result.map((e) => e.playerId);
     let i = 0;
