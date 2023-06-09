@@ -3,12 +3,14 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { Navigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import { useDispatch } from "react-redux";
+import { getUserThunk } from "../redux/actions/userThunk";
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [redirect, setRedirect] = useState(false); //redirect to main page
-
+  const dispatch = useDispatch();
   const userLogin = async (e) => {
     e.preventDefault();
     const response = await axios.post(
@@ -43,6 +45,7 @@ function Login() {
       theme: "dark",
       progressStyle: { background: "#00B700" },
     });
+    dispatch(getUserThunk(response.data.userId));
     setRedirect(true);
   };
 
