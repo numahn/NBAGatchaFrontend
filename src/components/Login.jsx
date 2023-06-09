@@ -2,56 +2,51 @@ import React, { Fragment, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { Navigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { getUserThunk } from "../redux/actions/userThunk";
+import { toast } from "react-toastify";
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [loginStatus, setLoginStatus] = useState("");
   const [redirect, setRedirect] = useState(false); //redirect to main page
 
-  const dispatch = useDispatch();
+  const userLogin = async (e) => {
+    e.preventDefault();
+    const response = await axios.post("http://localhost:5200/login", {
+      email,
+      password,
+    });
 
-  const login = async () => {
-    const response = await axios.post(
-      "https://ttp-capstone-project-backend.vercel.app/login",
-      {
-        email,
-        password,
-      }
-    );
-
-    if (response.status === 200) {
-      setLoginStatus(`Welcome back, ${response.data[0].username}`);
-      setTimeout(() => {
-        setRedirect(true);
-      }, 2000); //timeout so user can see welcome tag
-      dispatch(getUserThunk(response.data[0].userId));
+    if (response.data.status !== 200) {
+      toast("🛑 " + response.data.message, {
+        position: "top-right",
+        autoClose: 2500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        theme: "dark",
+        progressStyle: { background: "red" },
+      });
+      return;
     }
 
-    if (response.status === 400) {
-      setLoginStatus(response.errors);
-    }
-    // .catch((error) => {
-    //   if (error.response.status === 400) {
-    //     //if email is incorrect
-    //     setLoginStatus(error.response.data.errors);
-    //     console.log(error.response.data.errors);
-    //   }
-    //   if (error.response.status === 401) {
-    //     //if password is incorrect
-    //     setLoginStatus(error.response.data.password);
-    //     console.log(error.response.data.password);
-    //   }
-    // });
+    toast("✅ " + response.data.message, {
+      position: "top-right",
+      autoClose: 2500,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: true,
+      theme: "dark",
+      progressStyle: { background: "#00B700" },
+    });
+    setRedirect(true);
   };
-
-  //redux
 
   if (redirect) {
     return <Navigate to="/" />; //redirect to home upon correct login
   }
+
   return (
     <Fragment>
       <div
@@ -66,7 +61,7 @@ function Login() {
       >
         <div className="homeboxes">
           <div className="container" style={{ height: "100%" }}>
-            <div className="text-center">
+            <form className="text-center" onSubmit={(e) => userLogin(e)}>
               <div className="">
                 <h1>Login</h1>
                 <label
@@ -83,6 +78,7 @@ function Login() {
                   onChange={(e) => {
                     setEmail(e.target.value);
                   }}
+                  required
                 />
               </div>
               <label
@@ -99,13 +95,10 @@ function Login() {
                 onChange={(e) => {
                   setPassword(e.target.value);
                 }}
+                required
               />
-
-              <button onClick={login} className="btn btn-primary mt-3">
-                Login
-              </button>
-            </div>
-            <h1> {loginStatus}</h1>
+              <button className="btn btn-primary mt-3">Login</button>
+            </form>
             <em
               style={{
                 justifyContent: "center",

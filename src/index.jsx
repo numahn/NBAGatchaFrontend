@@ -22,7 +22,7 @@ ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <Provider store={store}>
-        <ToastContainer style={{ padding: 0 }} />
+        <ToastContainer style={{ padding: 0, width: "unset" }} />
         <Nav />
         <Routes>
           <Route path="/" element={<App />} />
