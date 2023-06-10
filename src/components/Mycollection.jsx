@@ -122,7 +122,7 @@ function Mycollection() {
     <section className="Parallax">
       <div
         className="Parallax__background"
-        style={{ transform: `translateY(-${offsetY * 0.5}px)` }}
+        style={{ transform: `translateY(-${offsetY * 0.5}px)`}}
       />
       <div
         className="Parallax__background-triangles"

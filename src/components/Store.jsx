@@ -30,7 +30,7 @@ function Store() {
         />
         <div
           className="Parallax__background-triangles"
-          style={{ transform: `translateY(${offsetY * 0.8}px)` }}
+          style={{ transform: `translateY(${offsetY * 0.8}px)` }, {height: `2500px`}}
         />
         {/* <div className="Parallax__content">{renderContent()}</div> */}
 

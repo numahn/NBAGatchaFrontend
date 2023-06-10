@@ -57,11 +57,11 @@ function Home() {
       <section className="Parallax">
         <div
           className="Parallax__background"
-          style={{ transform: `translateY(-${offsetY * 0.5}px)` }}
+          style={{ transform: `translateY(-${offsetY * 0.5}px)`}}
         />
         <div
           className="Parallax__background-triangles"
-          style={{ transform: `translateY(${offsetY * 0.8}px)` }, {height: `700px`}}
+          style={{ transform: `translateY(${offsetY * 0.8}px)` }, {height: `1000px`}}
         />
         <div className="Parallax__content">{renderContent()}</div>
       </section>
