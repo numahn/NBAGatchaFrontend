@@ -3,9 +3,10 @@ import {
   FETCH_USER,
   START_FETCHING_USER,
   END_FETCHING_USER,
+  INITIAL_STATE_USER,
 } from "./userActions";
 
-export const getUserThunk = (id) => async (dispatch) => {
+const getUserThunk = (id) => async (dispatch) => {
   try {
     dispatch({ type: START_FETCHING_USER });
     const response =
@@ -18,3 +19,13 @@ user/${id}`);
     console.error(error);
   }
 };
+
+const initialUserState = () => async (dispatch) => {
+  try {
+    dispatch({ type: INITIAL_STATE_USER });
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+export { getUserThunk, initialUserState };

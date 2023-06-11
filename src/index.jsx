@@ -16,7 +16,7 @@ import Pack3 from "./components/Pack3";
 import Store from "./components/Store";
 import Mycollection from "./components/Mycollection";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 ReactDOM.render(
