@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { initialUserState } from "../redux/actions/userThunk";
 
@@ -10,9 +10,11 @@ function Nav() {
     state.user.isFetchingUser,
   ]);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   
   const userSignOut = () => {
     dispatch(initialUserState());
+    navigate("/")
   };
 
   return (
