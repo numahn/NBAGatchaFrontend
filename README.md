@@ -9,7 +9,6 @@ This project is up and running, but may be a work in progress.
   <kbd> <img src="https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB" /> </kbd>
   <kbd> <img src="https://img.shields.io/badge/redux-%23593d88.svg?style=for-the-badge&logo=redux&logoColor=white" /> </kbd>
   <kbd> <img src="https://img.shields.io/badge/SASS-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white" /> </kbd>
-  <kbd> <img src="https://img.shields.io/badge/netlify-%23000000.svg?style=for-the-badge&logo=netlify&logoColor=#00C7B7" /> </kbd>
 </div>
 and other React Libraries!
 
