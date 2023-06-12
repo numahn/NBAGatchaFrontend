@@ -13,8 +13,8 @@ This project is up and running, but may be a work in progress.
 </div>
 and other React Libraries!
 
-## Deployed on Netlify
-[https://goatgradecollectibles.netlify.app/]
+## Deployed on Vercel
+[https://ggc-numahn.vercel.app/]
 
 ## Getting Started
 To run the program after pulling the repo, download and install a few packages:
